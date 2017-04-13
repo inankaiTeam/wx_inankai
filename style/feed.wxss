@@ -1,0 +1,101 @@
+.i-feed-item{
+    position: relative;
+    /*解决navbar继承的text-align样式*/
+    text-align: left;
+}
+.i-avatar{
+    position: absolute;
+    top: 40rpx;
+    left: 40rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+.i-avatar image{
+    width: 100%;
+    height: 100%;
+}
+
+.i-feed-main:before{    
+    content: "";    
+    display: table;    
+} 
+.i-feed-main .i-username{
+    font-weight: bold;
+    font-size: 32rpx;
+}
+.i-feed-main{
+    margin: 0 40rpx 20rpx 160rpx;
+    font-size: 26rpx;
+    min-height: 140rpx;
+}
+.i-feed-content{
+    margin-right:60rpx;
+}
+.i-feed-top{
+    margin: 40rpx 0 10rpx 0;
+
+}
+.i-sent-date{
+    float:right;
+}
+
+.i-feed-bottom{
+    margin: 20rpx 40rpx;
+}
+.i-feed-bottom text {
+    font-size: 28rpx;
+    line-height: 2.2;
+}
+.i-feed-bottom .i-comment,.i-feed-bottom .i-like{
+    display: inline-block;
+    width: 70rpx;
+    margin-left:10rpx;
+}
+.i-feed-bottom .i-comment{
+    background: url(/images/comment.png) no-repeat;
+    background-position:left center;
+    background-size: 38rpx;
+    padding-left: 44rpx; 
+}
+.i-feed-bottom .i-comment:active{
+    background-image: url(/images/comment_act.png);
+}
+.i-feed-bottom .i-like{
+    background: url(/images/like.png) no-repeat;
+    background-position:left center;
+    background-size: 36rpx;
+    padding-left: 44rpx; 
+}
+.i-feed-bottom .i-like:active{
+    background-image: url(/images/like_act.png);
+}
+.i-feed-bottom .i-collection{
+    width: 50rpx;
+    height: 60rpx;
+    float: right;
+    background: url(/images/collection.png) no-repeat;
+    background-position:left center;
+    background-size: 18px;
+}
+.i-feed-bottom .i-collection:active{
+    background-image: url(/images/collection_act.png);
+}
+.i-feed-bottom .i-dislike{
+    width: 50rpx;
+    height: 60rpx;
+    float: right;
+    background: url(/images/dislike.png) no-repeat;
+    background-position:left center;
+    background-size: 36rpx;
+}
+.i-feed-bottom .i-dislike:active{
+    background-image: url(/images/dislike_act.png);
+}
+
+.i-pics{
+    margin-top:20rpx;
+}
+
+.i-sent-date{
+    color:#bbb;
+}

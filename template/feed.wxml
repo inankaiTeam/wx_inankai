@@ -1,0 +1,53 @@
+<!--
+    信息流单条信息模板
+    input：
+        i_feed = {
+      avatar: '/images/logo.jpg',
+      username: '陈静韬真的会修电脑喵',
+      sent_date: '1小时前',
+      feed_content: '南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙南开大学与世界一流大学真的只有一堵墙',
+      like: 12,
+      comment: 12,
+      img_arr: ['/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg']
+    }
+-->
+<template name="feed-item">
+    <view class="i-feed-item">
+        <view class="i-avatar">
+            <image src="{{i_feed.avatar}}"></image>
+        </view>
+        <view class="i-feed-main">
+            <view class="i-feed-top">
+                <text class="i-username">{{i_feed.username}}</text>
+                <text class="i-sent-date">{{i_feed.sent_date}}</text>
+            </view>
+            <view class="i-feed-content">
+                <text>{{i_feed.feed_content}}</text>
+                <view class="i-pics">
+                <!--weui grid组件-->
+                    <view class="weui-grids">
+                        <block wx:for="{{i_feed.img_arr}}" wx:key="*this"  wx:for-item="imgSrc">
+                            <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                                <image class="weui-grid__icon" src="{{imgSrc}}" />
+                            </navigator>
+                        </block>
+                    </view>
+                </view>
+            </view>
+    </view>
+
+    <view class="i-feed-bottom">
+            <view class="i-hr"></view>
+            <view class="i-comment">
+                <text>{{i_feed.comment}}</text>
+            </view>
+            <view class="i-like">
+                <text>{{i_feed.like}}</text>
+            </view>
+            <view class="i-dislike">
+            </view>
+            <view class="i-collection">
+            </view>
+        </view>
+    </view>
+</template>

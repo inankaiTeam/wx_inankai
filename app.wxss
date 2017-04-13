@@ -1,0 +1,24 @@
+/**app.wxss**/
+/*@import '/style/weui.wxss';*/
+@import '/style/weui-navbar.wxss';
+@import '/style/weui-grid.wxss';
+
+page{
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+}
+container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+} 
+.i-hr{
+    width:100%;  
+    height:1px;  
+    background:#ddd;  
+    line-height:1px;  
+}
