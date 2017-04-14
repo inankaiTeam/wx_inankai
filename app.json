@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/messages/messages",
     "pages/index/index",
+    "pages/messages/messages",
     "pages/logs/logs"
   ],
   "tabBar": {
