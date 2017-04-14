@@ -1,0 +1,21 @@
+<!--
+单条信息流模板
+var atme = {
+    username: "陈静韬真的会修电脑喵",
+    time: "1分钟前",
+    content: "南开与世界一流大学真的只隔一堵墙。"
+}
+
+-->
+
+
+<template name="atme-item" data="{...item}">
+    <view class="i-at-list">
+        <view class="i-at-text">
+            <text class="i-at-username">{{item.username}} </text>
+            <text>提到了你</text>
+            <text class="i-at-time">{{item.time}}</text>
+        </view>
+        <view class="i-at-content">{{item.content}}</view>
+    </view>
+</template>

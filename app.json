@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/messages/messages",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -11,7 +12,7 @@
       "selectedIconPath": "images/index_act.png",
       "text": "主页"
     },{
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/messages/messages",
       "iconPath": "images/message.png",
       "selectedIconPath": "images/message_act.png",
       "text": "消息"
