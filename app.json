@@ -9,12 +9,27 @@
       "pagePath": "pages/index/index",
       "iconPath": "images/index.png",
       "selectedIconPath": "images/index_act.png",
-      "text": "首页"
+      "text": "主页"
     },{
       "pagePath": "pages/logs/logs",
-      "iconPath": "images/find.png",
-      "selectedIconPath": "images/find_act.png",
-      "text": "日志"
+      "iconPath": "images/message.png",
+      "selectedIconPath": "images/message_act.png",
+      "text": "消息"
+    },{
+      "pagePath": "pages/logs/logs",
+      "iconPath": "images/publish.png",
+      "selectedIconPath": "images/publish_act.png",
+      "text": "发布"
+    },{
+      "pagePath": "pages/logs/logs",
+      "iconPath": "images/collection.png",
+      "selectedIconPath": "images/collection_act.png",
+      "text": "热门"
+    },{
+      "pagePath": "pages/logs/logs",
+      "iconPath": "images/mine.png",
+      "selectedIconPath": "images/mine_act.png",
+      "text": "个人"
     }]
   },
   "window":{
