@@ -1,14 +1,19 @@
 var app = getApp();
 var sliderWidth = 96;
 var atme = require('../../utils/atme.js');
-console.log(atme);
+var comment = require('../../utils/comment.js');
+var zan = require('../../utils/zan.js');
+
 Page({
     data: {
         tabs: ["@我的", "评论", "赞"],
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
-        atme: atme
+        atme: atme,
+        comment: comment,
+        zan: zan,
+        userInfo: {}
     },
     //事件处理函数
   tabClick: function (e) {
@@ -18,11 +23,11 @@ Page({
         });
     },
     onLoad: function () {
-        console.log('onLoad');
         var that = this;
         //调用应用实例的方法获取全局数据
         app.getUserInfo(function(userInfo){
         //更新数据
+        console.log(userInfo);
         that.setData({
             userInfo:userInfo
             })

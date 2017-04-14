@@ -1,4 +1,6 @@
 <import src='/template/atme.wxml' />
+<import src='/template/comment.wxml' />
+<import src='/template/zan.wxml' />
 <view class="page">
     <view class="page__bd">
         <view class="weui-tab">
@@ -11,16 +13,25 @@
                 <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
             </view>
             <view class="weui-tab__panel">
-                <!-- 选项卡1 -->
+                <!-- @me -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                 <block wx:for="{{atme}}">
                     <template is="atme-item" data="{{item}}"></template>
                 </block>
                 </view>
-                <!-- 选项卡2 -->
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
-                <!-- 选项卡3 -->
-                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+                <!-- comment -->
+                
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">                 <block wx:for="{{comment}}">
+                        <template is="comment-item" data="{{item}}"></template>
+                    </block>
+                
+                </view>
+                <!-- zan -->
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                <block wx:for="{{zan}}">
+                        <template is="comment-item" data="{{item}}"></template>
+                </block>
+                </view>
             </view>
         </view>
     </view>

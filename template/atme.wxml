@@ -1,4 +1,5 @@
 <!--
+@me页模板
 单条信息流模板
 var atme = {
     username: "陈静韬真的会修电脑喵",
@@ -9,7 +10,7 @@ var atme = {
 -->
 
 
-<template name="atme-item" data="{...item}">
+<template name="atme-item">
     <view class="i-at-list">
         <view class="i-at-text">
             <text class="i-at-username">{{item.username}} </text>
