@@ -1,0 +1,8 @@
+@import '/style/weui-navbar.wxss';
+@import '/style/weui-atme.wxss';
+@import '/style/weui-comment.wxss';
+
+.weui-tab__content {
+    font-size: 24rpx;
+    text-align: left;
+}

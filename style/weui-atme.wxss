@@ -1,0 +1,20 @@
+.i-at-list {
+    padding: 14rpx 26rpx;
+    border-bottom: 1px solid gainsboro;
+}
+
+.i-at-username {
+    font-weight: 700;
+}
+
+.i-at-time {
+    float: right;
+    color: gray;
+}
+
+.i-at-content {
+    margin: 10rpx 0;
+    padding: 20rpx;
+    border: 1px solid lightgrey;
+    background-color: gainsboro;
+}
