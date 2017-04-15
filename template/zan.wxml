@@ -8,7 +8,7 @@
     }
 -->
 
-<template name="comment-item">
+<template name="zan-item">
     <view class="i-comment">
         <view class="i-comment-avatar">
               <image src="../../images/logo.jpg" background-size="cover"></image>

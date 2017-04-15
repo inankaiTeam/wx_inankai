@@ -29,7 +29,7 @@
                 <!-- zan -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                 <block wx:for="{{zan}}">
-                        <template is="comment-item" data="{{item}}"></template>
+                        <template is="zan-item" data="{{item}}"></template>
                 </block>
                 </view>
             </view>
