@@ -1,0 +1,29 @@
+<!--pages/search/search.wxml-->
+<view class="i-container">
+    <view class="clearfix">
+        <view class="i-search">
+            <image src="/images/search.png"></image>
+            <input placeholder="搜索" bindtap="toSearchPage" focus="true" />
+        </view>
+        <view class="i-cancle" bindtap="toHotPage">
+            <text>取消</text>
+        </view>
+    </view>
+    <view class="i-history">
+        <block wx:for="{{history}}">
+            <li>
+                <image src="/images/history.png"></image>
+                <text>{{item.title}}</text>
+            </li>
+        </block>
+    </view>
+    <view class="i-hot-search">
+        <view class="h3">
+            <image src="/images/hot_search.png"></image>
+            <text>热门搜索</text>
+        </view> 
+        <block wx:for="{{hot_topic}}">
+            <li>{{item.title}}</li>
+        </block>
+    </view>
+</view>
