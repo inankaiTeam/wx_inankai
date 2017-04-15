@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/publish/publish",
     "pages/messages/messages",
     "pages/logs/logs",
     "pages/search/search",
@@ -19,7 +20,7 @@
       "selectedIconPath": "images/message_act.png",
       "text": "消息"
     },{
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/publish/publish",
       "iconPath": "images/publish.png",
       "selectedIconPath": "images/publish_act.png",
       "text": "发布"
