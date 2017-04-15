@@ -15,6 +15,7 @@ container {
   padding: 200rpx 0;
   box-sizing: border-box;
   font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  background-color: #f0f0f2;
 } 
 .i-hr{
     width:100%;  
@@ -22,3 +23,27 @@ container {
     background:#ddd;  
     line-height:1px;  
 }
+.h1{
+  font-size: 42rpx;
+}
+.h2{
+  font-size: 38rpx;
+}
+.h3{
+  font-size: 34rpx;
+}
+
+.i-copyright{
+  font-size: 28rpx;
+  color:#999;
+  line-height: 100rpx;
+  text-align: center;
+}
+.clearfix:after { 
+  display: block; 
+  height: 0; 
+  content: ""; 
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+} 

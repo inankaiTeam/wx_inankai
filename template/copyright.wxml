@@ -1,0 +1,5 @@
+<template name="i-copyright">
+    <view class="i-copyright">
+        <text>inankai@2017</text>
+    </view>
+</template>

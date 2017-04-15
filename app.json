@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/search/search",
+    "pages/hot/hot"
   ],
   "tabBar": {
     "selectedColor": "#515151",
@@ -21,9 +23,9 @@
       "selectedIconPath": "images/publish_act.png",
       "text": "发布"
     },{
-      "pagePath": "pages/logs/logs",
-      "iconPath": "images/collection.png",
-      "selectedIconPath": "images/collection_act.png",
+      "pagePath": "pages/hot/hot",
+      "iconPath": "images/find.png",
+      "selectedIconPath": "images/find_act.png",
       "text": "热门"
     },{
       "pagePath": "pages/logs/logs",
