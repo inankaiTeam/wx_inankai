@@ -1,0 +1,48 @@
+.i-comment {
+    padding: 14rpx 26rpx;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.i-comment-avatar > image {
+  width: 64rpx;
+  height: 64rpx;
+  position: relative;
+  left: 20%;
+  border-radius: 50%;
+  border: 1rpx solid lightgrey;
+}
+
+.i-comment-avatar {
+    width: 15%;
+    float: left;
+}
+
+.i-comment-content {
+    width: 60%;
+    float: left;
+}
+
+.i-comment-name > text {
+    font-weight: bold;
+}
+
+.i-comment-contents {
+    padding: 10rpx 0;
+}
+
+.i-comment-time > text {
+    color: gray;
+}
+
+.i-comment-rightbar {
+    width: 98rpx;
+    height: 100rpx;
+    padding: 5px;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    right: 20rpx;
+    background-color: gainsboro;
+}

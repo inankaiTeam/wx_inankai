@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/messages/messages",
     "pages/logs/logs",
     "pages/search/search",
     "pages/hot/hot"
@@ -13,7 +14,7 @@
       "selectedIconPath": "images/index_act.png",
       "text": "主页"
     },{
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/messages/messages",
       "iconPath": "images/message.png",
       "selectedIconPath": "images/message_act.png",
       "text": "消息"
