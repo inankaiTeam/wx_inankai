@@ -39,7 +39,7 @@
     font-size: 30rpx;
     color:#bababa
 }
-.i-cancle text{padding:20rpx;}
+.i-cancle text{padding:18rpx;}
 .i-hot-search {
     margin: 0rpx 0 20rpx;
     background-color: #fff;

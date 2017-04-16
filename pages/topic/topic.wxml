@@ -1,0 +1,30 @@
+<!--pages/topic/topic.wxml-->
+<import src='/template/feed.wxml' />
+<view class="i-container">
+    <view class="i-banner">
+        <image src="https://ask.nankai.edu.cn/image/appbg.jpg" mode="aspectFill"></image>
+        <view class="i-topic-info">
+            <text>#早安南开#</text>
+            <text>此话题下一共有631个帖子</text>
+        </view>
+    </view>
+    <view class="i-hot-part">
+        <view bindtap="toPeopleInfo">
+            
+            <text>热门帖子</text>
+        </view>
+    </view>
+    <view class="i-allfeed">
+        <template is="feed-item" data="{{i_feed: i_feed_1}}"></template>
+    </view>
+    <view class="i-recent-part">
+    <view bindtap="toPeopleInfo">
+       
+        <text>最近帖子</text>
+    </view>
+    </view>
+    <view class="i-allfeed">
+        <template is="feed-item" data="{{i_feed: i_feed_1}}"></template>
+    </view>
+
+</view>

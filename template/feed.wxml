@@ -19,10 +19,19 @@
         <view class="i-feed-main">
             <view class="i-feed-top">
                 <text class="i-username">{{i_feed.username}}</text>
-                <text class="i-sent-date">{{i_feed.sent_date}}</text>
+                <image src="/images/option.png"></image>
+            </view>
+            <view class="i-sent-date">
+                <text class="">{{i_feed.sent_date}}</text>
             </view>
             <view class="i-feed-content">
-                <text>{{i_feed.feed_content}}</text>
+                <text class="{{i_feed.isHide ? i_feed.textHide : i_feed.textShow}}">{{i_feed.feed_content}}</text>
+                <view wx:if="{{i_feed.isHide}} " class="show-or-hide clearfix" bindtap="onclickopen"> 
+                    <text>全文</text>  
+                </view>
+                <view wx:if="{{!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickclose"> 
+                    <text>收起</text> 
+                 </view>
                 <view class="i-pics">
                 <!--weui grid组件-->
                     <view class="weui-grids">
@@ -39,15 +48,24 @@
     <view class="i-feed-bottom">
             <view class="i-hr"></view>
             <view class="i-comment">
+                <image src="/images/comment.png" ></image>
                 <text>{{i_feed.comment}}</text>
             </view>
             <view class="i-like">
+                <image src="/images/like.png" ></image>
                 <text>{{i_feed.like}}</text>
             </view>
-            <view class="i-dislike">
+            <!--<view class="i-dislike">
             </view>
             <view class="i-collection">
-            </view>
+            </view>-->
+            
+            
+            
+            <image src="/images/dislike.png" class="i-dislike">
+            </image>
+            <image src="/images/collection.png" class="i-collection">
+            </image>
         </view>
     </view>
 </template>

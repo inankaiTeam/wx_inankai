@@ -41,6 +41,11 @@ Page({
 
     ]
   },
+  toTopic:function(){
+    wx.navigateTo({
+      url: '/pages/topic/topic'
+    })
+  },
   toSearchPage: function() {
      wx.navigateTo({
       url: '/pages/search/search'

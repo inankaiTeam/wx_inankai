@@ -1,0 +1,77 @@
+/* pages/topic/topic.wxss */
+@import '/style/feed.wxss';
+.i-container{
+    /*height: 100%;*/
+    background-color: #f0f0f2;
+    overflow: hidden;
+    padding-bottom: 10rpx;
+}
+
+.i-banner{
+    position: relative;
+    width:100%;
+    height: 350rpx;
+}
+.i-banner image{
+    width: 100%;
+    height:100%;
+}
+.i-topic-info{
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    width: 100%;
+}
+.i-topic-info text{
+    display: block;
+    text-align: center;
+    margin-top:20rpx;
+    color:#fff;
+    font-weight: bold;
+}
+
+.i-hot-part{
+    background-color:#fff;
+    /*margin:20rpx 0 0;*/
+    border-top: 1px #e8e8e8 solid;
+}
+.i-hot-part text{
+    display: block;
+    font-size: 32rpx;
+    line-height:60rpx;
+    border-bottom: 1px #e8e8e8 solid;
+    padding: 20rpx 0 20rpx 40rpx;
+    font-weight:bold;
+    
+}
+.i-hot-part image{
+    margin:0rpx 24rpx 0;
+    width:45rpx;
+    height:45rpx;
+    float:right;
+    margin-top:26rpx;
+}
+.i-allfeed{
+    background-color: #fff;
+}
+.i-recent-part{
+    background-color:#fff;
+    margin:20rpx 0 0;
+    border-top: 1px #e8e8e8 solid;
+}
+.i-recent-part text{
+    display: block;
+    font-size: 32rpx;
+    line-height:60rpx;
+    border-bottom: 1px #e8e8e8 solid;
+    padding: 20rpx 0 20rpx 40rpx;
+    font-weight:bold;
+}
+.i-recent-part image{
+    margin:0rpx 24rpx 0;
+    width:45rpx;
+    height:45rpx;
+    float:right;
+    margin-top:26rpx;
+}
+
