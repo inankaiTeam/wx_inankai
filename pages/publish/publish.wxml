@@ -19,7 +19,10 @@
         </view>
         <view class="images-wrapper">
           <view class="images-list">
-            <block wx:for="{{imageList}}" wx:for-item="image">
+            <block 
+            wx:for="{{imageList}}" 
+            wx:key="{{imageList}}"
+            wx:for-item="image">
               <image src="{{image}}" class="images-image" data-src="{{image}}" bindtap="previewImage"></image>
             </block>
             <view class="images-image image-plus" bindtap="chooseImage">

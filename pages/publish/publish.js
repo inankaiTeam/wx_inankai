@@ -15,6 +15,20 @@ Page({
     countIndex: 9,
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   },
+  onShow(){
+    var that=this
+    //每次页面打开都会调用
+    wx.getStorage({
+      key: 'iContent',
+      success(res) {
+          console.log(res.data)
+          //设置content
+          that.setData({
+            content: res.data
+          })
+      } 
+    })
+  },
   sourceTypeChange: function (e) {
     this.setData({
       sourceTypeIndex: e.detail.value
@@ -37,7 +51,11 @@ Page({
   },
   publishCard(){
     var data = this.data
-    console.log(data.imageList)
+    // console.log(data.imageList)
+    if(data.imageList.length==0&&!data.content.trim()){
+      //文字和图片不能均为空
+      return
+    }
     wx.request({
       method:'POST',
       url: 'https://ask.nankai.edu.cn', //仅为示例，并非真实的接口地址
@@ -68,6 +86,25 @@ Page({
         }
       })
     })
+    //发布成功后清除草稿，
+    wx.setStorage({
+      key:"iContent",
+      data:''
+    })
+    //跳转首页
+    wx.showToast({
+      title: '发布成功',
+      icon: 'success',
+      duration: 1500,
+      complete(){
+        setTimeout(function(){
+          wx.switchTab({
+            url: '../index/index'
+          })
+        },1500)
+      }
+    })
+    
   },
   previewImage: function (e) {
     var current = e.target.dataset.src
@@ -77,8 +114,14 @@ Page({
     })
   },
   setContent(e){
+    //设置content
     this.setData({
       content: e.detail.value
+    })
+    //本地缓存content，存储草稿，可以再次打开编辑
+    wx.setStorage({
+      key:"iContent",
+      data:e.detail.value
     })
     // console.log(e.detail.value)
   },
