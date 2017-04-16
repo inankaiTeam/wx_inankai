@@ -1,0 +1,50 @@
+<!--pages/publish/publish.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="i-wrapper">
+      <form>
+        <!--<view class="weui-cells__title">文本域</view>-->
+        <view class="weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea 
+                    maxlength="-1"
+                    value="{{content}}" 
+                    class="weui-textarea" 
+                    bindblur="setContent"
+                    placeholder="这一刻的想法..." 
+                    style="height: 4.3em" />
+                </view>
+            </view>
+        </view>
+        <view class="images-wrapper">
+          <view class="images-list">
+            <block 
+            wx:for="{{imageList}}" 
+            wx:key="{{imageList}}"
+            wx:for-item="image">
+              <image src="{{image}}" class="images-image" data-src="{{image}}" bindtap="previewImage"></image>
+            </block>
+            <view class="images-image image-plus" bindtap="chooseImage">
+              <view class="image-plus-horizontal"></view>
+              <view class="image-plus-vertical"></view>
+            </view>
+          </view>
+        </view>
+      </form>
+    </view>
+    <!--i-wrapper end-->
+    <view class="i-btn-wrapper">
+      <checkbox-group bindchange ="setAnonymous">
+        <checkbox 
+        value="{{anonymous}}"
+        checked="{{anonymous}}"/>匿名
+      </checkbox-group>
+      <button bindtap="publishCard" class="i-publish-btn" type="primary" size="mini">发布</button>
+    </view>
+  </view>
+
+ </view>
+
+
+
