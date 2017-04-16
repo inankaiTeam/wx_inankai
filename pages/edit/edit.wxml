@@ -1,0 +1,32 @@
+<!--pages/edit/edit.wxml-->
+<view class="i-container">
+    <view class="i-info-part1">
+        <view class="i-username clearfix">
+            <label>昵称</label>
+            <input bindtap="toSearchPage" value="雨洁百科" />
+        </view>
+        <view class="i-slogan clearfix">
+            <label>签名</label>
+            <input bindtap="toSearchPage" value="雨洁百科" />
+            <text>例如：学霸 / 撸猫爱好者</text>
+        </view>
+    </view>
+    <view class="i-info-part2">
+        <view class="i-sex clearfix">
+            <label>性别</label>
+            <input bindtap="toSearchPage" value="女" />
+        </view>
+        <view class="i-department clearfix">
+            <label>院系</label>
+            <input bindtap="toSearchPage" value="哲学院 逻辑学专业" />
+        </view>
+        <view class="i-grade clearfix">
+            <label>年级</label>
+            <input bindtap="toSearchPage" value="2013级本科生" />
+        </view>
+        <view class="i-province clearfix">
+            <label>来自</label>
+            <input bindtap="toSearchPage" value="天津市滨海新区" />
+        </view>
+    </view>
+</view>

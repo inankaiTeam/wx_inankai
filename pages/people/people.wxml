@@ -1,0 +1,58 @@
+<!--pages/user/user.wxml-->
+<import src='/template/feed.wxml' />
+<view class="i-container">
+    <view class="i-banner">
+        <image src="https://ask.nankai.edu.cn/image/appbg.jpg" mode="aspectFill"></image>
+    </view>
+    <view class="i-part1">
+        <view class="clearfix">
+            <view class="i-user-avatar">
+                <image src="/images/logo.jpg"></image>
+            </view>
+            <view class="i-userinfo-right">
+                <view class="i-username">
+                    <text>雨洁百科</text>
+                    <image src="/images/woman.png"></image>
+                </view>
+                <view class="i-intro">
+                    <text>4月1日欢迎关注高能少年团</text>
+                </view>
+            </view>
+        </view>
+        <view class="i-userinfo-bottom clearfix">
+            <view class="i-grade i-info">
+                <image src="/images/grade.png"></image>
+                <text>2013级本科生</text>
+            </view>
+            <view class="i-province i-info">
+                <image src="/images/province.png"></image>
+                <text>云南省 玉溪市</text>
+            </view>
+            <view class="i-department i-info">
+                <image src="/images/department.png"></image>
+                <text>金融学院 金融系</text>
+            </view>
+        </view>
+    </view>
+    <view class="i-influence">
+        <view class="i-like-num">
+            <image src="/images/like.png"></image>
+            <text>30k</text>
+        </view>
+        <view class="i-collection-num">
+            <image src="/images/collection.png"></image>
+            <text>600</text>
+        </view>
+    </view>
+    <view class="i-part2">
+        <view bindtap="toPeopleInfo">
+            <image src="/images/p_search.png"></image>
+            <li>全部帖子</li>
+        </view>
+    </view>
+    <view class="i-allfeed">
+        <template is="feed-item" data="{{i_feed: i_feed_1}}"></template>
+    </view>
+
+</view>
+

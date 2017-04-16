@@ -1,0 +1,128 @@
+/* pages/user/user.wxss */
+.i-container{
+    /*height: 100%;*/
+    background-color: #f0f0f2;
+    overflow: hidden;
+    padding-bottom: 10rpx;
+}
+.edit{
+    position: absolute;
+    top:30rpx;
+    right:30rpx;
+}
+.edit image{
+    width: 44rpx;
+    height:44rpx;
+}
+.i-banner{
+    width:100%;
+    height: 350rpx;
+}
+.i-banner image{
+    width: 100%;
+    height:100%;
+}
+
+.i-part1{
+    border-top: 1px #bbb solid;
+    border-bottom: 1px #bbb solid;
+    background-color: #fff;
+    height:220rpx;
+}
+.i-part1 .i-avatar{
+    position: relative;
+    top: -80rpx;
+}
+.i-part1 .i-avatar image {
+    float: left;
+    width: 140rpx;
+    height:140rpx;
+    border: 1px #bbb solid;
+    margin: 0 40rpx 0 70rpx;
+}
+.i-part1 .i-userinfo-right{
+    float: left;
+    position: relative;
+    top: -80rpx;
+}
+.i-part1 .i-userinfo-right .i-username{
+    margin: 10rpx 0 45rpx;
+    color: #fff;
+}
+.i-part1 .i-userinfo-right .i-intro{
+    font-size: 28rpx;
+    margin-bottom:40rpx
+}
+.i-userinfo-bottom{
+    position: relative;
+    top:-80rpx;
+    left:230rpx;
+}
+.i-allfeed text, .i-collections text{
+    display: block;
+    text-align: center;
+    font-size: 30rpx;
+}
+.i-allfeed{
+    float: left;
+    border-right: 1px #bbb solid;
+    /*margin-left: 20rpx;*/
+    padding: 0 40rpx;
+}
+.i-part1 .num{
+    position: relative;
+    top:-10rpx;
+}
+.i-part1 .name{
+    position: relative;
+    top:10rpx;
+}
+.i-collections{
+    float: left;
+    padding: 0 40rpx;
+}
+
+.i-part2{
+    background-color:#fff;
+    margin:20rpx 0;
+    border-top: 1px #bbb solid;
+    border-bottom: 1px #bbb solid;
+}
+.i-part2 li{
+    display: block;
+    font-size: 32rpx;
+    line-height:60rpx;
+    border-bottom: 1px #e8e8e8 solid;
+    padding: 20rpx 0 20rpx 20rpx;
+    
+}
+.i-part2 image{
+    margin:0rpx 24rpx 0;
+    width:45rpx;
+    height:45rpx;
+    float:left;
+    margin-top:26rpx;
+}
+
+
+.i-part3{
+    background-color:#fff;
+    margin:20rpx 0;
+    border-top: 1px #bbb solid;
+    border-bottom: 1px #bbb solid;
+}
+.i-part3 li{
+    display: block;
+    font-size: 32rpx;
+    line-height:60rpx;
+    border-bottom: 1px #e8e8e8 solid;
+    padding: 20rpx 0 20rpx 20rpx;
+    
+}
+.i-part3 image{
+    margin:0rpx 24rpx 0;
+    width:45rpx;
+    height:45rpx;
+    float:left;
+    margin-top:26rpx;
+}
