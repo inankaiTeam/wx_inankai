@@ -1,0 +1,80 @@
+/* pages/edit/edit.wxss */
+.i-container{
+    height: 100%;
+    background: #f0f0f2;
+    overflow: hidden;
+    border-top:1px #bbb solid;
+    border-bottom:1px #bbb solid;
+}
+
+label{
+    float:left;
+    width:20%;
+    height: 80rpx;
+    font-size: 34rpx;
+    line-height: 80rpx;
+    text-align: left;
+    box-sizing: border-box;
+}
+input{
+    float:left;
+    width:80%;
+    height: 80rpx;
+    font-size: 34rpx;
+    line-height: 80rpx;
+}
+.i-info-part1{
+    margin:20rpx 0;
+    background-color: #fff;
+    border-top:1px #bbb solid;
+    border-bottom:1px #bbb solid;
+}
+.i-info-part1 view{
+    margin:20rpx 60rpx;
+    
+}
+.i-info-part1 text{
+    display: block;
+    margin-left:20%;
+    font-size: 28rpx;
+    color:#9c9c9c;
+}
+.i-info-part1 input{
+    border-bottom: 1px #bbb solid;
+}
+.i-info-part1 .i-slogan input{
+    margin-bottom: 10rpx;
+}
+
+.i-info-part2{
+    margin:20rpx 0;
+    background-color: #fff;
+    border-top:1px #bbb solid;
+    border-bottom:1px #bbb solid;
+}
+.i-info-part2 view{
+    margin:0rpx 0rpx;
+    /*border-top:1px #bbb solid;*/
+    border-bottom:1px #bbb solid;
+}
+.i-info-part2 label{
+    width:23%;
+    padding-left: 60rpx;
+}
+.i-info-part2 text{
+    display: block;
+    margin-left:20%;
+    font-size: 28rpx;
+    color:#9c9c9c;
+}
+.i-info-part2 input{
+    /*border-bottom: 1px #bbb solid;*/
+    width:70%;
+    margin-left:12rpx;
+}
+.i-info-part2 .i-slogan input{
+    margin-bottom: 10rpx;
+}
+.i-info-part2 .i-province{
+    border: 0px;
+}

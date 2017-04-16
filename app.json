@@ -1,12 +1,17 @@
 {
   "pages":[
-    "pages/singlecomment/singlecomment",
     "pages/index/index",
     "pages/publish/publish",
     "pages/messages/messages",
     "pages/logs/logs",
     "pages/search/search",
-    "pages/hot/hot"
+    "pages/hot/hot",
+    "pages/user/user",
+    "pages/people/people",
+    "pages/edit/edit",
+    "pages/collection/collection",
+    "pages/topic/topic",
+    "pages/singlecomment/singlecomment"
   ],
   "tabBar": {
     "selectedColor": "#515151",
@@ -31,7 +36,7 @@
       "selectedIconPath": "images/find_act.png",
       "text": "热门"
     },{
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/user/user",
       "iconPath": "images/mine.png",
       "selectedIconPath": "images/mine_act.png",
       "text": "个人"

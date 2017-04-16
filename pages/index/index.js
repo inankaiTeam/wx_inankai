@@ -1,9 +1,10 @@
 //index.js
 //获取应用实例
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-var i_feed = require('../../utils/feed.js')
-console.log(i_feed.i_feed);
-var app = getApp()
+var i_feed = require('../../utils/feed.js');
+console.log(i_feed);
+
+var app = getApp();
 Page({
   data: {
     motto: 'Hello World',
@@ -20,6 +21,14 @@ Page({
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,activeIndex: e.currentTarget.id
     });
+  },
+  onclickopen: function() {
+      var that = this;
+      i_feed.onclickopen(that);
+  },
+  onclickclose: function() {
+      var that = this;
+      i_feed.onclickclose(that);
   },
   onLoad: function () {
     console.log('onLoad');

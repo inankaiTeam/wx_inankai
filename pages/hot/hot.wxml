@@ -9,7 +9,7 @@
     <swiper autoplay="true" interval="4000" duration="1600">
         <block wx:for="{{imgUrls}}">
             <swiper-item>
-            <image src="{{item}}" mode="aspectFill" class="slide-image" width="355" height="150"/>
+            <image src="{{item}}" mode="aspectFill" class="slide-image" width="355" height="175"/>
             </swiper-item>
         </block>
     </swiper>
@@ -19,7 +19,7 @@
             <text>热门话题</text>
         </view> 
         <block wx:for="{{hot_topic}}">
-            <li>{{item.title}}</li>
+            <li bindtap="toTopic">{{item.title}}</li>
         </block>
     </view>
 </view>
