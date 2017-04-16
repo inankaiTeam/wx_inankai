@@ -6,7 +6,7 @@ var i_feed_1 = {
       like: 12,
       comment: 12,
       img_arr: ['/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg']
-    };
+};
 
 var i_feed_2 = {
       avatar: '/images/logo.jpg',

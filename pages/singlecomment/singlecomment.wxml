@@ -1,0 +1,39 @@
+<import src='/template/feed.wxml' />
+<import src='/template/comment.wxml' />
+
+<template is="feed-item" data='{{i_feed: feed}}'></template>
+
+<view class="i-comment-container">
+    <view class="i-comment-sort">
+        <text>时间倒序</text>
+        <text>时间正序</text>
+        <text class="i-comment-select">热度倒叙</text>
+    </view>
+    <view class="i-comment-comments">
+        <block wx:for="{{comment}}">
+            <template is="comment-item" data='{{comment: item}}'></template>
+        </block>
+    </view>
+</view>
+<view class="i-comment-footer-bar">
+    <!--<view class="i-comment-footer-bar">
+        <view class=""><text>收藏</text></view>
+        <view class=""><text>评论</text></view>
+        <view class=""><text>点赞</text></view>
+        <view class=""><text>举报</text></view>
+    </view>-->
+    <view class="i-comment-input">
+        <input placeholder="输入评论..." maxlength="140"/>
+    </view>
+    <view class="i-comment-button">
+        <checkbox-group>
+            <label class="checkbox">
+                <checkbox value="私信" checked=""/> 私信
+            </label>
+            <label class="checkbox">
+                <checkbox value="匿名" checked=""/> 匿名
+            </label>
+        </checkbox-group>
+        <button type="primary" size="mini">发布</button>
+    </view>
+</view>

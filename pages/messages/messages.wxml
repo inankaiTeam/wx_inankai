@@ -1,6 +1,6 @@
-<import src='/template/atme.wxml' />
-<import src='/template/comment.wxml' />
-<import src='/template/zan.wxml' />
+<import src='/template/messages/atme.wxml' />
+<import src='/template/messages/comment.wxml' />
+<import src='/template/messages/zan.wxml' />
 <view class="page">
     <view class="page__bd">
         <view class="weui-tab">

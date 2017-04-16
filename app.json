@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/singlecomment/singlecomment",
     "pages/index/index",
     "pages/publish/publish",
     "pages/messages/messages",

@@ -1,6 +1,6 @@
 @import '/style/weui-navbar.wxss';
-@import '/style/weui-atme.wxss';
-@import '/style/weui-comment.wxss';
+@import '/style/messages/weui-atme.wxss';
+@import '/style/messages/weui-comment.wxss';
 
 .weui-tab__content {
     font-size: 24rpx;
