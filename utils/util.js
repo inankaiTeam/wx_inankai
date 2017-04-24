@@ -16,6 +16,15 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function getTopics(content){
+  var topics = content.match(/#([^#;]*?)#/g)
+  topics=topics.map((item)=>{
+    return item.substr(1,item.length-2) //删除前后的#
+  })
+  return topics
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getTopics: getTopics
 }
