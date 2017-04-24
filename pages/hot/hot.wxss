@@ -9,7 +9,7 @@
 
 .i-container{
     /*height: 100%;*/
-    background-color: #f0f0f2;
+    background-color: #f2f2f2;
     overflow: hidden;
     padding-bottom: 10rpx;
 }
@@ -51,13 +51,13 @@ swiper image{
     margin: 20rpx 0;
     background-color: #fff;
     overflow: hidden;
-    border-bottom: 1px #bbb solid;
+    border-bottom: 1px #f2f2f2 solid;
 }
 .i-hot-topic .h2{
     font-weight:bold;
     padding: 20rpx 0;
-    border-top: 1px #bbb solid;
-    border-bottom: 1px #bbb solid;
+    border-top: 1px #f2f2f2 solid;
+    border-bottom: 1px #f2f2f2 solid;
 }
 .i-hot-topic .h2 image{
     margin:0rpx 20rpx 0;
@@ -68,7 +68,7 @@ swiper image{
 .i-hot-topic li{
     display: block;
     font-size: 28rpx;
-    border-bottom: 1px #e8e8e8 solid;
+    border-bottom: 1px #f2f2f2 solid;
     padding: 20rpx 0 20rpx 20rpx;
     
 }

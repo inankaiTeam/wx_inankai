@@ -1,7 +1,7 @@
 /* pages/singlecomment/singlecomment.wxss */
 
 page {
-    background-color: gainsboro;
+    background-color: #f2f2f2;
 }
 
 
@@ -56,8 +56,8 @@ page {
     margin-top: 20rpx;
     margin-right: 60rpx;
     padding: 15rpx;
-    border: 1px solid #f9f9f9;
-    background-color: #f9f9f9;
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .i-comment-list {

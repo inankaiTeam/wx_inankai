@@ -15,11 +15,17 @@
               <view class="weui-tab__panel">
                   <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                   <!--最热信息流-->
-                      <template is="feed-item" data="{{i_feed: i_feed_1}}"></template>
+                  <block wx:for="{{hotDataArr}}" wx:key="*this">
+                  <template is="feed-item" data="{{i_feed: item}}"></template>
+                  </block>
+                      <!--<template is="feed-item" data="{{i_feed: i_feed_1}}"></template>-->
                   </view>
                   <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                   <!--最新信息流-->
-                      <template is="feed-item" data="{{i_feed: i_feed_2}}"></template>
+                  <block wx:for="{{newDataArr}}" wx:key="*this">
+                  <template is="feed-item" data="{{i_feed: item}}"></template>
+                  </block>
+                      <!--<template is="feed-item" data="{{i_feed: i_feed_2}}"></template>-->
                   </view>
               </view>
           </view>

@@ -1,15 +1,25 @@
+/*hack*/
+.weui-tab__content{
+    padding-top: 40px;
+    text-align: center;
+}
+
 .i-feed-item{
     position: relative;
     /*解决navbar继承的text-align样式*/
     text-align: left;
-    border-bottom: 1px #e8e8e8 solid;
+    border-top: 1px #f2f2f2 solid;
+    border-bottom: 1px #f2f2f2 solid;
+    font-size: 28rpx;
+    margin-bottom:20rpx;
+    background-color: #fff;
 }
 .i-avatar{
     position: absolute;
     top: 40rpx;
     left: 40rpx;
-    width: 100rpx;
-    height: 100rpx;
+    width: 90rpx;
+    height: 90rpx;
 }
 .i-avatar image{
     width: 100%;
@@ -22,16 +32,14 @@
 } 
 .i-feed-main .i-username{
     font-weight: bold;
-    font-size: 32rpx;
+    font-size: 28rpx;
 }
 .i-feed-main{
     margin: 0 40rpx 20rpx 160rpx;
-    font-size: 26rpx;
     min-height: 140rpx;
 }
 .i-feed-content{
     margin-right:60rpx;
-   
 }
 .i-feed-content .i-text-hide{
     display: block;
@@ -45,12 +53,13 @@
 
 }
 .show-or-hide text{
-    float:right;
+    float:left;
     margin-right:20rpx;
+    margin-top: 10rpx;
     color:#507daf;
 }
 .i-feed-top{
-    margin: 40rpx 0 10rpx 0;
+    margin: 40rpx 0 0rpx 0;
 
 }
 .i-feed-top image{
@@ -61,22 +70,29 @@
 
 .i-feed-bottom{
     margin: 20rpx 40rpx 10rpx;
-    
 }
 .i-feed-bottom image{
     float:left;
     width:32rpx;
     height:32rpx;
-    margin-top:8rpx;
-    margin-right:8rpx; 
+    margin-right:14rpx; 
 }
 .i-feed-bottom text {
-    font-size: 28rpx;
+    font-size: 22rpx;
+    display:inline-block;
 }
 .i-feed-bottom .i-comment,.i-feed-bottom .i-like{
     display: inline-block;
-    width: 90rpx;
+    width: 116rpx;
     margin-left:10rpx;
+    
+}
+.i-feed-bottom text{
+    color:#707070;
+}
+.i-comment,.i-like,.i-collection,.i-dislike{
+    margin-top:16rpx;
+    margin-bottom: 10rpx;
 }
 .i-feed-bottom .i-dislike{
     width:34rpx;
@@ -87,6 +103,7 @@
     width:34rpx;
     height:34rpx;
     float: right;
+    margin-right:8rpx;
 }
 /*.i-feed-bottom .i-comment{
     background: url(/images/comment.png) no-repeat;
@@ -134,5 +151,7 @@
 }
 
 .i-sent-date{
+    font-size: 26rpx;
     color:#bbb;
+    margin:10rpx 0;
 }

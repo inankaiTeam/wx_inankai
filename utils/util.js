@@ -15,7 +15,6 @@ function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-
 function getTopics(content){
   var topics = content.match(/#([^#;]*?)#/g)
   topics=topics.map((item)=>{
@@ -23,8 +22,11 @@ function getTopics(content){
   })
   return topics
 }
-
+function increase_attr(obj,opt) {
+  Object.assign(obj, opt);
+}
 module.exports = {
   formatTime: formatTime,
+  increase_attr: increase_attr,
   getTopics: getTopics
 }

@@ -1,8 +1,32 @@
 /* pages/publish/publish.wxss */
 @import "../../style/weui.wxss";
-
+.container button{
+  border-radius:30rpx;
+  border:1px #007aff solid;
+  background-color:#007aff;
+  color:#fff;
+  
+}
+button.primary{
+  background-color:transparent;
+  color:#007aff;
+  border:1px #007aff solid;
+}
+button::after{
+  border:0px;
+}
+.primary.button-hover[type="primary"]{
+  background-color:#007aff;
+  border:1px #007aff solid;
+  color:#fff;
+}
+.button-hover[type="primary"]{
+  background-color:#d9d9d9;
+  border:1px #d9d9d9 solid;
+  color:#fff;
+}
 .i-wrapper{
-  border: solid #d9d9d9 1px;
+  border: solid #f2f2f2 1px;
 }
 .images-wrapper {
   padding: 20rpx;
@@ -23,7 +47,7 @@
   margin: 10rpx;
 }
 .image-plus {
-  border: 1px solid #999;
+  border: 1px solid #d9d9d9;
   position: relative;
 }
 .image-plus-horizontal {
@@ -45,11 +69,16 @@
   transform: translate(-50%, -50%);
 }
 .i-btn-wrapper{
-  border-bottom: solid #d9d9d9 1px;
-  padding: 10rpx 20rpx;
-  display: flex;
-  justify-content: flex-end;
+  border-bottom: solid #f2f2f2 1px;
+  padding: 22rpx 20rpx;
+  /*display: flex;*/
+  /*justify-content: flex-end;*/
 }
 .i-publish-btn{
+  float:right;
+  margin: 0 10rpx;
+}
+.hot-btn{
+  float:left;
   margin: 0 10rpx;
 }

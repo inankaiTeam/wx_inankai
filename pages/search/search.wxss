@@ -1,7 +1,7 @@
 /* pages/search/search.wxss */
 .i-container{
     /*height: 100%;*/
-    background-color: #f0f0f2;
+    background-color: #f2f2f2;
     overflow: hidden;
     padding-bottom: 10rpx;
 }
@@ -37,20 +37,20 @@
     height:70rpx;
     line-height:110rpx;
     font-size: 30rpx;
-    color:#bababa
+    color:#bababa;
 }
 .i-cancle text{padding:18rpx;}
 .i-hot-search {
     margin: 0rpx 0 20rpx;
     background-color: #fff;
     overflow: hidden;
-    border-bottom: 1px #bbb solid;
+    border-bottom: 1px #f2f2f2 solid;
 }
 .i-hot-search .h3{
     font-weight:bold;
     padding: 20rpx 0;
-    border-top: 1px #bbb solid;
-    border-bottom: 1px #bbb solid;
+    border-top: 1px #f2f2f2 solid;
+    border-bottom: 1px #f2f2f2 solid;
 }
 .i-hot-search .h3 image{
     margin:0rpx 20rpx 0;
@@ -61,7 +61,7 @@
 .i-hot-search li{
     display: block;
     font-size: 28rpx;
-    border-bottom: 1px #bbb solid;
+    border-bottom: 1px #f2f2f2 solid;
     padding: 20rpx 0 20rpx 20rpx;
     
 }
@@ -72,13 +72,13 @@
 .i-history{
     background-color: #fff;
     margin-bottom: 20rpx;
-    border-top: 1px #bbb solid;
-    /*border-bottom: 1px #bbb solid;*/
+    border-top: 1px #f2f2f2 solid;
+    /*border-bottom: 1px #f2f2f2 solid;*/
 }
 .i-history li{
     display: block;
     font-size: 28rpx;
-    border-bottom: 1px #bbb solid;
+    border-bottom: 1px #f2f2f2 solid;
     padding: 20rpx 0 20rpx 20rpx;
     color:#8d8988;
 }
