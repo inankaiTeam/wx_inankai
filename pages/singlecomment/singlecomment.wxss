@@ -1,0 +1,145 @@
+/* pages/singlecomment/singlecomment.wxss */
+
+page {
+    background-color: gainsboro;
+}
+
+
+@import "/style/feed.wxss"; 
+
+.i-comment-container {
+    padding-bottom: 20rpx;
+    background-color: #fff;
+   
+}
+
+.i-comment-onelist {
+    margin: 0 40rpx;
+    border-top: 1px solid #f2f2f2;
+    margin-bottom: 100rpx;
+}
+
+.i-comment-onelist .i-feed-item {
+    margin: 0 -40rpx;
+}
+
+.i-comment-sort {
+    overflow: hidden;
+    margin: 0 40rpx;
+}
+
+.i-comment-select {
+    font-weight: bold;
+}
+
+.i-comment-sort > text{
+    font-size: 26rpx;
+    float: right;
+    padding: 15rpx 10rpx;
+}
+
+.i-feed-item {
+    background-color: #fff;
+}
+.i-sent-date {
+    display: block;
+    float: none;
+    font-size: 24rpx;
+    margin-top: 5rpx;
+}
+
+.i-comment-comments .i-username {
+    font-size: 26rpx;
+}
+
+.i-comment-othercomments {
+    margin-top: 20rpx;
+    margin-right: 60rpx;
+    padding: 15rpx;
+    border: 1px solid #f9f9f9;
+    background-color: #f9f9f9;
+}
+
+.i-comment-list {
+    margin-bottom: 10rpx;
+}
+
+.i-comment-list-name {
+    color: #507daf;
+}
+
+.i-comment-more {
+    color: #507daf;
+}
+
+.i-comment-icon {
+    float: right;
+}
+
+.i-comment-icon > image {
+    width: 28rpx;
+    height: 28rpx;
+    position: relative;
+    top: 4rpx;
+    right: 5rpx;
+}
+
+.i-comment-icon > text {
+    display: inline-block;
+    margin-right: 40rpx;
+}
+
+
+.i-comment-footer-bar {
+    position: fixed;
+    width: 100%;
+    height: 160rpx;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+    bottom: 0;
+}
+
+.i-comment-footer-bar > view {
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+
+/*.i-comment-footer-bar > view:not(:last-child) {
+    border-right: 1px solid darkgray;
+}*/
+
+.i-comment-input {
+    width: 100%;
+    padding-top: 15rpx;
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80px;
+    border-bottom: 1px solid #eee;
+}
+
+.i-comment-input > input {
+    padding: 0 40rpx;
+    width: 100%;
+}
+
+.i-comment-button {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 40rpx;
+}
+
+.checkbox {
+    margin-right: 20rpx;
+}
+
+
+.i-comment-button > button {
+    float: right;
+    position: relative;
+    margin-top: 12rpx;
+    right: 40rpx;
+}
+
+.i-comment-button > checkbox-group {
+    display: inline-block;
+}

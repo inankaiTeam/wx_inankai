@@ -1,33 +1,35 @@
-<!--
-
-评论页
-
-    var content = {
-        name: "陈静韬真的会修电脑喵",
-        comment: "你好,我是陈静韬真的会修电脑,喵，我是人间四月天！",
-        time: "1分钟前",
-        mycontent: "南开与世界一流大学真的只有一墙之隔。"
-    }
--->
 
 <template name="comment-item">
-    <view class="i-comment">
-        <view class="i-comment-avatar">
-              <image src="../../images/logo.jpg" background-size="cover"></image>
+<view class="i-comment-onelist">
+    <view class="i-feed-item">
+        <view class="i-avatar">
+            <image src="{{comment.avatar}}"></image>
         </view>
-        <view class="i-comment-content">
-            <view class="i-comment-name">
-                <text>{{item.name}}</text>
+        <view class="i-feed-main">
+            <view class="i-feed-top">
+                <text class="i-username">{{comment.username}}</text>
+                <view class="i-comment-icon">
+                        <image src="../../images/like.png"></image>
+                        <text> {{comment.zan}} </text>
+                        <image src="../../images/comment.png" bindtap="writeComment"></image>
+                </view>
+                <text class="i-sent-date">{{comment.sent_date}}</text>
             </view>
-            <view class="i-comment-contents">
-                <text>{{item.comment}}</text>  
+            <view class="i-feed-content">
+                <text selectable="true">{{comment.feed_content}}</text>
             </view>
-            <view class="i-comment-time">
-                <text>{{item.time}}</text>
+
+            <!--评论区-->
+            <view class="i-comment-othercomments">
+                <block wx:for="{{comment.comments}}">
+                <view class="i-comment-list">
+                    <text class="i-comment-list-name">{{item.comment_user}}</text>
+                    <text>: {{item.comment_content}}</text>
+                </view>
+                </block>
+                <view class="i-comment-more">共{{comment.total}}条回复 >></view>
             </view>
-        </view>
-        <view class="i-comment-rightbar">
-            <text>{{item.mycontent}}</text>
         </view>
     </view>
+</view>
 </template>

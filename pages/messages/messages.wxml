@@ -1,6 +1,6 @@
-<import src='/template/atme.wxml' />
-<import src='/template/comment.wxml' />
-<import src='/template/zan.wxml' />
+<import src='/template/messages/atme.wxml' />
+<import src='/template/messages/comment.wxml' />
+<import src='/template/messages/zan.wxml' />
 <view class="page">
     <view class="page__bd">
         <view class="weui-tab">
@@ -29,7 +29,7 @@
                 <!-- zan -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                 <block wx:for="{{zan}}">
-                        <template is="comment-item" data="{{item}}"></template>
+                        <template is="zan-item" data="{{item}}"></template>
                 </block>
                 </view>
             </view>

@@ -1,6 +1,5 @@
 {
   "pages":[
-   
     "pages/index/index",
     "pages/publish/publish",
     "pages/messages/messages",
@@ -11,7 +10,8 @@
     "pages/people/people",
     "pages/edit/edit",
     "pages/collection/collection",
-    "pages/topic/topic"
+    "pages/topic/topic",
+    "pages/singlecomment/singlecomment"
   ],
   "tabBar": {
     "selectedColor": "#515151",

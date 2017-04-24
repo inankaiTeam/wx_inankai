@@ -1,8 +1,10 @@
 <!--
-    点赞页面模板
 
-    var zan = {
+评论页
+
+    var content = {
         name: "陈静韬真的会修电脑喵",
+        comment: "你好,我是陈静韬真的会修电脑,喵，我是人间四月天！",
         time: "1分钟前",
         mycontent: "南开与世界一流大学真的只有一墙之隔。"
     }
@@ -18,7 +20,7 @@
                 <text>{{item.name}}</text>
             </view>
             <view class="i-comment-contents">
-                <text>赞了你的帖子</text>  
+                <text>{{item.comment}}</text>  
             </view>
             <view class="i-comment-time">
                 <text>{{item.time}}</text>
