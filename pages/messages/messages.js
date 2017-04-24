@@ -16,7 +16,7 @@ Page({
         userInfo: {}
     },
     //事件处理函数
-  tabClick: function (e) {
+    tabClick: function (e) {
         this.setData({
             sliderOffset: e.currentTarget.offsetLeft,
             activeIndex: e.currentTarget.id

@@ -2,7 +2,7 @@
 <import src='/template/feed.wxml' />
 <view class="i-container">
     <view class="i-banner">
-        <image src="https://ask.nankai.edu.cn/image/appbg.jpg" mode="aspectFill"></image>
+        <image src="https://inankai.nankai.edu.cn/image/appbg.jpg" mode="aspectFill"></image>
         <view class="i-topic-info">
             <text>#早安南开#</text>
             <text>此话题下一共有631个帖子</text>

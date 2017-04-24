@@ -2,6 +2,7 @@
     信息流单条信息模板
     input：
         i_feed = {
+      cardid:"34"
       avatar: '/images/logo.jpg',
       username: '陈静韬真的会修电脑喵',
       sent_date: '1小时前',
@@ -26,10 +27,10 @@
             </view>
             <view class="i-feed-content">
                 <text class="{{i_feed.isHide ? i_feed.textHide : i_feed.textShow}}">{{i_feed.feed_content}}</text>
-                <view wx:if="{{i_feed.isHide}} " class="show-or-hide clearfix" bindtap="onclickopen"> 
+                <view wx:if="{{!!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickopen" data-cardid="{{i_feed.cardid}}"> 
                     <text>全文</text>  
                 </view>
-                <view wx:if="{{!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickclose"> 
+                <view wx:if="{{!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickclose" data-cardid="{{i_feed.cardid}}"> 
                     <text>收起</text> 
                  </view>
                 <view class="i-pics">
@@ -47,25 +48,36 @@
 
     <view class="i-feed-bottom">
             <view class="i-hr"></view>
-            <view class="i-comment">
+            <view class="i-comment" bindtap="toComment" data-cardid="{{i_feed.cardid}}">
                 <image src="/images/comment.png" ></image>
                 <text>{{i_feed.comment}}</text>
             </view>
-            <view class="i-like">
-                <image src="/images/like.png" ></image>
+            <view class="i-like" bindtap="onclickLike">
+                <view wx:if="{{!i_feed.isLike}}" data-isLike="{{i_feed.isLike}}"> 
+                    <image src="/images/like.png" ></image>
+                </view>
+                <view wx:if="{{i_feed.isLike}}" data-isLike="{{!i_feed.isLike}}"> 
+                    <image src="/images/like_act.png" ></image>
+                </view>
                 <text>{{i_feed.like}}</text>
             </view>
-            <!--<view class="i-dislike">
+            <view class="i-dislike" bindtap="onclickDislike">
+                <view wx:if="{{!i_feed.isDislike}}" data-isDislike="{{i_feed.isDislike}}"> 
+                    <image src="/images/dislike.png" ></image>
+                </view>
+                <view wx:if="{{i_feed.isDislike}}" data-isDislike="{{!i_feed.isDislike}}"> 
+                    <image src="/images/dislike_act.png" ></image>
+                </view>
             </view>
-            <view class="i-collection">
-            </view>-->
             
-            
-            
-            <image src="/images/dislike.png" class="i-dislike">
-            </image>
-            <image src="/images/collection.png" class="i-collection">
-            </image>
+            <view class="i-collection" bindtap="onclickCollection">
+                <view wx:if="{{!i_feed.isCollection}}" data-isCollection="{{i_feed.isCollection}}" > 
+                    <image src="/images/collection.png" ></image>
+                </view>
+                <view wx:if="{{i_feed.isCollection}}" data-isCollection="{{!i_feed.isCollection}}"> 
+                    <image src="/images/collection_act.png" ></image>
+                </view>
+            </view>
         </view>
     </view>
 </template>

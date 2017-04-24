@@ -34,13 +34,16 @@
       </form>
     </view>
     <!--i-wrapper end-->
-    <view class="i-btn-wrapper">
-      <checkbox-group bindchange ="setAnonymous">
+    <view class="i-btn-wrapper clearfix">
+      <!-- <checkbox-group bindchange ="setAnonymous">
         <checkbox 
         value="{{anonymous}}"
         checked="{{anonymous}}"/>匿名
-      </checkbox-group>
-      <button bindtap="publishCard" class="i-publish-btn" type="primary" size="mini">发布</button>
+      </checkbox-group> -->
+      <button class="i-publish-btn hot-btn primary" type="primary" size="mini">添加热门话题</button>
+      
+      <button bindtap="publishCard" class="i-publish-btn " type="primary" size="mini">发布</button>
+      <button class="i-publish-btn primary" type="primary" size="mini">公开</button>
     </view>
   </view>
 

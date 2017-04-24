@@ -3,8 +3,8 @@
     height: 100%;
     background: #f0f0f2;
     overflow: hidden;
-    border-top:1px #bbb solid;
-    border-bottom:1px #bbb solid;
+    border-top:1px #f2f2f2 solid;
+    border-bottom:1px #f2f2f2 solid;
 }
 
 label{
@@ -26,8 +26,8 @@ input{
 .i-info-part1{
     margin:20rpx 0;
     background-color: #fff;
-    border-top:1px #bbb solid;
-    border-bottom:1px #bbb solid;
+    border-top:1px #f2f2f2 solid;
+    border-bottom:1px #f2f2f2 solid;
 }
 .i-info-part1 view{
     margin:20rpx 60rpx;
@@ -40,7 +40,7 @@ input{
     color:#9c9c9c;
 }
 .i-info-part1 input{
-    border-bottom: 1px #bbb solid;
+    border-bottom: 1px #f2f2f2 solid;
 }
 .i-info-part1 .i-slogan input{
     margin-bottom: 10rpx;
@@ -49,13 +49,13 @@ input{
 .i-info-part2{
     margin:20rpx 0;
     background-color: #fff;
-    border-top:1px #bbb solid;
-    border-bottom:1px #bbb solid;
+    border-top:1px #f2f2f2 solid;
+    border-bottom:1px #f2f2f2 solid;
 }
 .i-info-part2 view{
     margin:0rpx 0rpx;
-    /*border-top:1px #bbb solid;*/
-    border-bottom:1px #bbb solid;
+    /*border-top:1px #f2f2f2 solid;*/
+    border-bottom:1px #f2f2f2 solid;
 }
 .i-info-part2 label{
     width:23%;
@@ -68,7 +68,7 @@ input{
     color:#9c9c9c;
 }
 .i-info-part2 input{
-    /*border-bottom: 1px #bbb solid;*/
+    /*border-bottom: 1px #f2f2f2 solid;*/
     width:70%;
     margin-left:12rpx;
 }

@@ -16,6 +16,10 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function increase_attr(obj,opt) {
+  Object.assign(obj, opt);
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  increase_attr: increase_attr
 }
