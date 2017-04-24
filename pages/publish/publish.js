@@ -1,3 +1,4 @@
+var util=require('../../utils/util.js')
 var sourceType = [ ['camera'], ['album'], ['camera', 'album'] ]
 var sizeType = [ ['compressed'], ['original'], ['compressed', 'original'] ]
 
@@ -52,39 +53,58 @@ Page({
   publishCard(){
     var data = this.data
     // console.log(data.imageList)
-    if(data.imageList.length==0&&!data.content.trim()){
+    if(!data.content.trim()){
       //文字和图片不能均为空
       return
     }
-    wx.request({
-      method:'POST',
-      url: 'https://ask.nankai.edu.cn', //仅为示例，并非真实的接口地址
-      data: {
-        anonymous: data.anonymous?1:0 ,
-        content: data.content
-      },
-      header: {
-          'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function(res) {
-        console.log(res.data)
-      }
-    })
+    
     //上传图片
-    data.imageList.forEach((item)=>{
-      wx.uploadFile({
-        url: 'https://ask.nankai.edu.cn', //仅为示例，非真实的接口地址
-        filePath: item,
-        name: 'file',
-        formData:{
-          'userid': 'xxxx'
-        },
-        success: function(res){
-          var data = res.data
-          //do something
-          console.log(data)
-        }
+    var promiseArr=[]
+    data.imageList.forEach((item,index)=>{
+      promiseArr[index]=new Promise((resolve,reject)=>{
+        wx.uploadFile({
+          url: 'https://inankai.nankai.edu.cn/upload_action.php', //仅为示例，非真实的接口地址
+          filePath: item,
+          name: 'file',
+          formData:{
+            'userid': 'xxxx'
+          },
+          success: function(res){
+            var data = JSON.parse(res.data)
+            //do something
+            console.log(data)
+            resolve(data.data)
+          },
+          fail(e){
+            reject(e)
+          }
+        })
       })
+    })
+    //所有图片发送完成后，返回图片地址再发送文本消息，带上图片地址
+    Promise.all(promiseArr).then((posts)=>{
+      console.log(posts)
+      //上传文本
+      wx.request({
+        method:'POST',
+        url: 'https://ask.nankai.edu.cn/setCard', //仅为示例，并非真实的接口地址
+        data: {
+          userid:2,
+          imageNum:1,
+          imgurls:posts,
+          topics:util.getTopics(data.content),
+          anonymous: data.anonymous?1:0 ,
+          content: data.content
+        },
+        success: function(res) {
+          console.log(res.data)
+        },
+        fail(e){
+          console.warn(e)
+        }
+    })
+    }).catch((reason)=>{
+      console.warn(reason)
     })
     //发布成功后清除草稿，
     wx.setStorage({
@@ -92,18 +112,18 @@ Page({
       data:''
     })
     //跳转首页
-    wx.showToast({
-      title: '发布成功',
-      icon: 'success',
-      duration: 1500,
-      complete(){
-        setTimeout(function(){
-          wx.switchTab({
-            url: '../index/index'
-          })
-        },1500)
-      }
-    })
+    // wx.showToast({
+    //   title: '发布成功',
+    //   icon: 'success',
+    //   duration: 1500,
+    //   complete(){
+    //     setTimeout(function(){
+    //       wx.switchTab({
+    //         url: '../index/index'
+    //       })
+    //     },1500)
+    //   }
+    // })
     
   },
   previewImage: function (e) {
@@ -130,5 +150,5 @@ Page({
     this.setData({
       anonymous: !!e.detail.value[0]
     })
-  }
+  },
 })
