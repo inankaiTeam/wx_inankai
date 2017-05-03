@@ -2,22 +2,22 @@
 @import "../../style/weui.wxss";
 .container button{
   border-radius:30rpx;
-  border:1px #007aff solid;
-  background-color:#007aff;
+  border:1px #515151 solid;
+  background-color:#515151;
   color:#fff;
   
 }
 button.primary{
   background-color:transparent;
-  color:#007aff;
-  border:1px #007aff solid;
+  color:#515151;
+  border:1px #515151 solid;
 }
 button::after{
   border:0px;
 }
 .primary.button-hover[type="primary"]{
-  background-color:#007aff;
-  border:1px #007aff solid;
+  background-color:#515151;
+  border:1px #515151 solid;
   color:#fff;
 }
 .button-hover[type="primary"]{

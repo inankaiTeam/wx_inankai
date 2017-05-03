@@ -9,9 +9,10 @@
             <view class="i-feed-top">
                 <text class="i-username">{{comment.username}}</text>
                 <view class="i-comment-icon">
-                        <image src="../../images/like.png"></image>
-                        <text> {{comment.zan}} </text>
                         <image src="../../images/comment.png" bindtap="writeComment"></image>
+                        <text> {{comment.zan}} </text>
+                        
+                        <image src="../../images/like.png"></image>
                 </view>
                 <text class="i-sent-date">{{comment.sent_date}}</text>
             </view>

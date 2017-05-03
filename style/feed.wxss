@@ -152,6 +152,9 @@
 
 .i-sent-date{
     font-size: 26rpx;
-    color:#bbb;
+    
     margin:10rpx 0;
+}
+.i-sent-date text {
+    color:#bfbfbf;
 }

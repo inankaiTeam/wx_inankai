@@ -5,9 +5,8 @@
 
 <view class="i-comment-container">
     <view class="i-comment-sort">
-        <text>时间倒序</text>
-        <text>时间正序</text>
-        <text class="i-comment-select">热度倒叙</text>
+        <text>最新评论</text>
+        <text class="i-comment-select">最热评论</text>
     </view>
     <view class="i-comment-comments">
         <block wx:for="{{comment}}">
@@ -26,14 +25,16 @@
         <input placeholder="输入评论..." maxlength="140"/>
     </view>
     <view class="i-comment-button">
-        <checkbox-group>
+        <!--<checkbox-group>
             <label class="checkbox">
                 <checkbox value="私信" checked=""/> 私信
             </label>
             <label class="checkbox">
                 <checkbox value="匿名" checked=""/> 匿名
             </label>
-        </checkbox-group>
-        <button type="primary" size="mini">发布</button>
+        </checkbox-group>-->
+        <button class="primary left-btn" type="primary" size="mini">仅作者可见</button>
+        <button class="primary left-btn annoymous" type="primary" size="mini">公开</button>
+        <button bindtap="publishCard" class="i-publish-btn" type="primary" size="mini">发布</button>
     </view>
 </view>

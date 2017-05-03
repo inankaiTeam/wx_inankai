@@ -83,15 +83,31 @@ Page({
     console.log(this.data.hotDataArr);
     // ajax请求渲染所需数据
       wx.request({
-        url: 'https://ask.nankai.edu.cn/getBanner', //仅为示例，并非真实的接口地址
+        url: 'https://ask.nankai.edu.cn/getCard?userid=1', //仅为示例，并非真实的接口地址
         data: {
         },
-        // header: {
-        //     'content-type': 'application/json'
-        // },
         success: function(res) {
-          console.log(res.data)
-          console.log(res.data)
+          let data = res.data.data;
+          console.log(data);
+          for(let i = 0;i<data.length;i++){
+            var opt = {
+                avatar:'/images/logo.jpg',
+                username: '陈静韬真的会修电脑喵',
+                isHide:true,
+                textHide:"i-text-hide",
+                textShow:"i-text-show",
+                isLike:true,
+                isCollection:true,
+                isDislike:true,
+                likeUrl:"/images/like.png",
+                collectionUrl:"/images/collection.png",
+                dislikeUrl:"/images/dislike.png",
+                index: i
+              };
+            data[i] = util.increase_attr(data[i],opt);
+            console.log(data[i]);
+          }
+          console.log(data)
         }
       });
 

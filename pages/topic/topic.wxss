@@ -1,12 +1,15 @@
 /* pages/topic/topic.wxss */
+@import '/style/weui-navbar.wxss';
 @import '/style/feed.wxss';
-.i-container{
+.container{
     /*height: 100%;*/
     background-color: #f2f2f2;
     overflow: hidden;
     padding-bottom: 10rpx;
 }
-
+.weui-navbar {
+    background-color: #fff;
+}
 .i-banner{
     position: relative;
     width:100%;
