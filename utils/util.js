@@ -17,6 +17,9 @@ function formatNumber(n) {
 }
 function getTopics(content){
   var topics = content.match(/#([^#;]*?)#/g)
+  if(!topics){
+    return []
+  }
   topics=topics.map((item)=>{
     return item.substr(1,item.length-2) //删除前后的#
   })

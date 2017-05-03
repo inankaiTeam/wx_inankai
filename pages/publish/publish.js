@@ -7,6 +7,8 @@ Page({
     anonymous:0,
     content:'',
     imageList:[],
+    showHot:false,
+    hotTopics:[],
     sourceTypeIndex: 3,
     sourceType: ['拍照', '相册', '拍照或相册'],
 
@@ -17,7 +19,42 @@ Page({
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   },
   onShow(){
-    var that=this
+    let that=this
+    //test
+    wx.login({
+      success: function(res) {
+        if (res.code) {
+          console.log(res.code)
+          //发起网络请求
+          wx.request({
+            url: 'https://ask.nankai.edu.cn/setUserid',
+            data: {
+              code: res.code
+            },
+            success(data){
+              console.log(data)
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    });
+    wx.request({
+      method:'GET',
+      url: 'https://ask.nankai.edu.cn/getHotTopic', //仅为示例，并非真实的接口地址
+      data: {
+      },
+      success: function(res) {
+        that.setData({
+          hotTopics:res.data.data,
+        })
+      },
+      fail(e){
+        console.warn(e)
+      }
+    })
+
     //每次页面打开都会调用
     wx.getStorage({
       key: 'iContent',
@@ -89,8 +126,8 @@ Page({
         method:'POST',
         url: 'https://ask.nankai.edu.cn/setCard', //仅为示例，并非真实的接口地址
         data: {
-          userid:2,
-          imageNum:1,
+          userid:1,
+          imageNum:posts.length,
           imgurls:posts,
           topics:util.getTopics(data.content),
           anonymous: data.anonymous?1:0 ,
@@ -145,10 +182,26 @@ Page({
     })
     // console.log(e.detail.value)
   },
-  setAnonymous(e){
-    // console.log(e.detail.value[0])
+  setAnonymous(){
+    // console.log(this.data.anonymous)
     this.setData({
-      anonymous: !!e.detail.value[0]
+      anonymous: this.data.anonymous==0?1:0
     })
   },
+  setShowHot(){
+    this.setData({
+      showHot: !this.data.showHot
+    })
+  },
+  addHotTopic(e){
+    let topic= '#'+e.target.dataset.topic+'# '
+    console.log(e.target.dataset.topic)
+    //加过的话题就不再加了
+    if(this.data.content.indexOf(topic)>-1){
+      return
+    }
+    this.setData({
+      content:topic+this.data.content
+    })
+  }
 })

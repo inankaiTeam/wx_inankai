@@ -83,8 +83,9 @@ Page({
     console.log(this.data.hotDataArr);
     // ajax请求渲染所需数据
       wx.request({
-        url: 'https://ask.nankai.edu.cn/getBanner', //仅为示例，并非真实的接口地址
+        url: 'https://ask.nankai.edu.cn/getCard?userid=1', //仅为示例，并非真实的接口地址
         data: {
+          
         },
         // header: {
         //     'content-type': 'application/json'
