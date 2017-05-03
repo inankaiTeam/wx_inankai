@@ -85,6 +85,7 @@ Page({
       wx.request({
         url: 'https://ask.nankai.edu.cn/getCard?userid=1', //仅为示例，并非真实的接口地址
         data: {
+          
         },
         success: function(res) {
           let data = res.data.data;

@@ -1,11 +1,21 @@
 /* pages/publish/publish.wxss */
 @import "../../style/weui.wxss";
 .container button{
-  border-radius:30rpx;
+  border-radius:40rpx;
   border:1px #515151 solid;
   background-color:#515151;
   color:#fff;
   
+}
+button[size="tag"]{
+  display:inline-block;
+  line-height:1.6;
+  border:1px #8a8a8a solid;
+  font-size:13px;
+  padding:0 1em;
+  margin: 0 10rpx;
+  color:#8a8a8a;
+  background-color:transparent;
 }
 button.primary{
   background-color:transparent;
@@ -82,3 +92,13 @@ button::after{
   float:left;
   margin: 0 10rpx;
 }
+.i-tag-wrapper{
+  /*background: #eee;*/
+  padding:15rpx 20rpx;
+}
+.i-notice{
+  padding:5rpx 30rpx;
+  font-size: 12px;
+  color:#8a8a8a;
+}
+

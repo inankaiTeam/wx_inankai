@@ -40,10 +40,23 @@
         value="{{anonymous}}"
         checked="{{anonymous}}"/>匿名
       </checkbox-group> -->
-      <button class="i-publish-btn hot-btn primary" type="primary" size="mini">添加热门话题</button>
+      <button class="i-publish-btn hot-btn primary" type="primary" bindtap="setShowHot" size="mini">添加热门话题</button>
       
       <button bindtap="publishCard" class="i-publish-btn " type="primary" size="mini">发布</button>
-      <button class="i-publish-btn primary" type="primary" size="mini">公开</button>
+      <button class="i-publish-btn primary" type="primary" bindtap="setAnonymous" size="mini">{{anonymous?'匿名':'公开'}}</button>
+    </view>
+    <view class="i-notice">
+      在帖子中输入#话题内容#即可创建或参与话题
+    </view>
+    <view wx:if="{{showHot}}" class="i-tag-wrapper">
+        <button 
+        wx:for="{{hotTopics}}" 
+        wx:key="{{index}}" 
+        class="i-tag " 
+        type="primary" 
+        bindtap="addHotTopic" 
+        data-topic="{{item['topic']}}"
+        size="tag">#{{item['topic']}}#</button>
     </view>
   </view>
 

@@ -1,8 +1,8 @@
 {
   "pages":[
-     "pages/index/index",
-    "pages/user/user",
     "pages/publish/publish",
+    "pages/index/index",
+    "pages/user/user",
    
     
     "pages/messages/messages",
@@ -17,6 +17,7 @@
     "pages/singlecomment/singlecomment"
   ],
   "tabBar": {
+    "color":"#8a8a8a",
     "selectedColor": "#515151",
     "list": [{
       "pagePath": "pages/index/index",
