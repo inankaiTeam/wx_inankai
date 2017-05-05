@@ -75,35 +75,125 @@ Feed.prototype.isHide = function(str) {
     return false;
   }
 }
-Feed.prototype.onclickopen = function(self, index){
-  // console.log(self);
-  self.data.i_feed_1.isHide = false;
-  self.setData({
-    i_feed_1: self.data.i_feed_1
-  })
-}
-Feed.prototype.onclickclose = function(self, index){
-  self.data.i_feed_1.isHide = true;
-  self.setData({
-    i_feed_1: self.data.i_feed_1
-  })
-}
-Feed.prototype.onclickLike = function(self, index, checkStatus){
-  if(checkStatus) {
-    self.data.i_feed_1.isLike = false;
-    self.data.i_feed_1.likeUrl = "/images/like.png"
+Feed.prototype.getAttr = function(event,attrname){
+  let attr;
+  if(attrname){
+    attrname = "."+attrname;
   } else {
-    self.data.i_feed_1.isLike = true;
-    self.data.i_feed_1.likeUrl = "/images/like_act.png"
+    attrname = "";
   }
+  if(event.currentTarget.dataset.feed.type == "new" ){
+    attr = "newDataArr["+ event.currentTarget.dataset.feed.index + "]" + attrname;
+  }
+  if(event.currentTarget.dataset.feed.type == "hot" ){
+    attr = "hotDataArr["+ event.currentTarget.dataset.feed.index + "]" + attrname;
+  }
+  return attr;
+}
+Feed.prototype.onclickopen = function(self, event){
+  let attr = this.getAttr(event,"isHide");
   self.setData({
-    i_feed_1: self.data.i_feed_1
+    [attr]: false
   })
 }
-Feed.prototype.onclickDislike = function(self){
-  self.data.i_feed_1.isDislike = false;
-  self.setData({
-    i_feed_1: self.data.i_feed_1
+Feed.prototype.onclickclose = function(self, event){
+  let attr = this.getAttr(event,"isHide");
+    self.setData({
+      [attr]: true
+    })
+}
+Feed.prototype.onclickLike = function(self, event){
+  let checkStatus = event.currentTarget.dataset.feed.isLike;
+  let attrIsLike = this.getAttr(event,"isLike");
+  // let attrLikeUrl = this.getAttr(event,"likeUrl");
+  let attrZanNum = this.getAttr(event,"zanNum");
+  let zanNum = event.currentTarget.dataset.feed.zanNum;
+  if(checkStatus) {
+    self.setData({
+       [attrIsLike]: false,
+      //  [attrLikeUrl]: "/images/like.png",
+       [attrZanNum]: zanNum - 1
+    });
+  } else {
+    self.setData({
+       [attrIsLike]: true,
+      //  [attrLikeUrl]: "/images/like_act.png",
+       [attrZanNum]: zanNum + 1
+    });
+  }
+  wx.request({
+    url: 'https://ask.nankai.edu.cn/setBehavior',
+    method:"POST",
+    data:{
+      // userid要改
+      userid:2,
+      cardid:event.currentTarget.dataset.feed.cardid,
+      type:'zan',
+      revoked:Number(checkStatus)
+    },
+    success: function(res){
+      console.log(res.data);
+    }
+  })
+}
+Feed.prototype.onclickDislike = function(self,event){
+  let checkStatus = event.currentTarget.dataset.feed.isDislike;
+  let attrIsDislike = this.getAttr(event,"isDislike");
+  // let attrDislikeUrl = this.getAttr(event,"dislikeUrl");
+  if(checkStatus) {
+    self.setData({
+       [attrIsDislike]: false,
+      //  [attrDislikeUrl]: "/images/dislike.png",
+    });
+  } else {
+    self.setData({
+       [attrIsDislike]: true,
+      //  [attrDislikeUrl]: "/images/dislike_act.png",
+    });
+  }
+  wx.request({
+    url: 'https://ask.nankai.edu.cn/setBehavior',
+    method:"POST",
+    data:{
+      // userid要改
+      userid:2,
+      cardid:event.currentTarget.dataset.feed.cardid,
+      type:'cai',
+      revoked:Number(checkStatus)
+    },
+    success: function(res){
+      console.log(res.data);
+    }
+  })
+}
+Feed.prototype.onclickCollection = function(self, event){
+  let checkStatus = event.currentTarget.dataset.feed.isCollection;
+  let attrIsCollection = this.getAttr(event,"isCollection");
+  // let attrCollectionUrl = this.getAttr(event,"collectionUrl");
+  if(checkStatus) {
+    self.setData({
+       [attrIsCollection]: false,
+      //  [attrCollectionUrl]: "/images/like.png"
+    });
+  } else {
+    self.setData({
+       [attrIsCollection]: true,
+      //  [attrCollectionUrl]: "/images/like_act.png"
+    });
+  }
+  wx.request({
+    url: 'https://ask.nankai.edu.cn/setBehavior',
+    method:"POST",
+    data:{
+      // userid要改
+      userid:2,
+      cardid:event.currentTarget.dataset.feed.cardid,
+      type:'collection',
+      revoked:Number(checkStatus)
+    },
+    success: function(res){
+      console.log(res.data);
+    }
   })
 }
 Feed.prototype.toPage = function(pageURL,paramName,id){

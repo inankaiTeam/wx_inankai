@@ -27,7 +27,7 @@ button::after{
 }
 .primary.button-hover[type="primary"]{
   background-color:#515151;
-  border:1px #007aff solid;
+  border:1px #515151 solid;
   color:#fff;
 }
 .button-hover[type="primary"]{

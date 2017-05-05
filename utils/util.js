@@ -27,6 +27,7 @@ function getTopics(content){
 }
 function increase_attr(obj,opt) {
   Object.assign(obj, opt);
+  return obj;
 }
 module.exports = {
   formatTime: formatTime,

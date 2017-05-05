@@ -16,7 +16,7 @@ page {
 .i-comment-onelist {
     margin: 0 40rpx;
     border-top: 1px solid #f2f2f2;
-    margin-bottom: 100rpx;
+    /*margin-bottom: 100rpx;*/
 }
 
 .i-comment-onelist .i-feed-item {
@@ -45,16 +45,15 @@ page {
     display: block;
     float: none;
     font-size: 24rpx;
-    margin-top: 5rpx;
+    color:#bfbfbf;
 }
 
 .i-comment-comments .i-username {
-    font-size: 26rpx;
+    font-size: 28rpx;
 }
 
 .i-comment-othercomments {
     margin-top: 20rpx;
-    margin-right: 60rpx;
     padding: 15rpx;
     border: 1px solid #f2f2f2;
     background-color: #f2f2f2;
@@ -63,7 +62,9 @@ page {
 .i-comment-list {
     margin-bottom: 10rpx;
 }
-
+.i-comment-list text{
+    font-size:26rpx;
+}
 .i-comment-list-name {
     color: #507daf;
 }
@@ -87,16 +88,22 @@ page {
 .i-comment-icon > text {
     display: inline-block;
     margin-right: 40rpx;
+    float: right;
+    font-size:20rpx;
+    margin-top:7rpx;
+    margin-left:11rpx;
+
 }
 
 
 .i-comment-footer-bar {
-    position: fixed;
-    width: 100%;
-    height: 160rpx;
-    border-top: 1px solid #eee;
-    background-color: #fff;
-    bottom: 0;
+    position:fixed;
+    width:100%;
+    height:171rpx;
+    border-top:1px solid #eee;
+    background-color:#fff;
+    bottom:0;
+
 }
 
 .i-comment-footer-bar > view {
@@ -111,7 +118,7 @@ page {
 .i-comment-input {
     width: 100%;
     padding-top: 15rpx;
-    font-size: 30rpx;
+    font-size: 28rpx;
     height: 80rpx;
     line-height: 80px;
     border-bottom: 1px solid #eee;
@@ -123,9 +130,9 @@ page {
 }
 
 .i-comment-button {
-    height: 80rpx;
-    line-height: 80rpx;
-    padding-left: 40rpx;
+    height:85rpx;
+    line-height:85rpx;
+    padding-left:40rpx;
 }
 
 .checkbox {
@@ -136,10 +143,60 @@ page {
 .i-comment-button > button {
     float: right;
     position: relative;
-    margin-top: 12rpx;
+    margin-top: 16rpx;
     right: 40rpx;
+}
+
+button[size="mini"] {
+    display:inline-block;
+    line-height:2.1;
+    font-size:13px;
+    padding:0 28rpx;
 }
 
 .i-comment-button > checkbox-group {
     display: inline-block;
+}
+
+.i-feed-content {
+    margin-right: 0rpx;
+}
+button.i-publish-btn{
+  border-radius:30rpx;
+  border:1px #515151 solid;
+  background-color:#515151;
+  color:#fff;
+  
+}
+button.primary{
+    border-radius: 30rpx;
+  background-color:transparent;
+  color:#515151;
+  border:1px #515151 solid;
+}
+button::after{
+  border:0px;
+}
+.primary.button-hover[type="primary"]{
+  background-color:#515151;
+  border:1px #515151 solid;
+  color:#fff;
+}
+.button-hover[type="primary"]{
+  background-color:#d9d9d9;
+  border:1px #d9d9d9 solid;
+  color:#fff;
+}
+.i-comment-sort text {
+    color:#bfbfbf;
+}
+.i-comment-sort .i-comment-select{
+    color:#515151;
+}
+.i-comment-button .left-btn{
+    margin-left:40rpx;
+    float: left;
+}
+.i-comment-button .left-btn.annoymous{
+    margin-left:20rpx;
 }

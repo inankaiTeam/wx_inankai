@@ -1,30 +1,43 @@
 <!--pages/topic/topic.wxml-->
 <import src='/template/feed.wxml' />
-<view class="i-container">
-    <view class="i-banner">
+<view class="container">
+<view class="i-banner">
         <image src="https://inankai.nankai.edu.cn/image/appbg.jpg" mode="aspectFill"></image>
         <view class="i-topic-info">
             <text>#早安南开#</text>
             <text>此话题下一共有631个帖子</text>
         </view>
     </view>
-    <view class="i-hot-part">
-        <view bindtap="toPeopleInfo">
-            
-            <text>热门帖子</text>
-        </view>
-    </view>
-    <view class="i-allfeed">
-        <template is="feed-item" data="{{i_feed: i_feed_1}}"></template>
-    </view>
-    <view class="i-recent-part">
-    <view bindtap="toPeopleInfo">
-       
-        <text>最近帖子</text>
-    </view>
-    </view>
-    <view class="i-allfeed">
-        <template is="feed-item" data="{{i_feed: i_feed_1}}"></template>
-    </view>
-
+  <view class="page">
+      <view class="page__bd">
+          <view class="weui-tab">
+              <view class="weui-navbar">
+                  <block wx:for="{{tabs}}" wx:key="*this">
+                      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                          <view class="weui-navbar__title">{{item}}</view>
+                      </view>
+                  </block>
+                  <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+              </view>
+              <view class="weui-tab__panel">
+                  <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <!--最热信息流-->
+                  <block wx:for="{{hotDataArr}}" wx:key="*this">
+                  <template is="feed-item" data="{{i_feed: item}}"></template>
+                  </block>
+                      <!--<template is="feed-item" data="{{i_feed: i_feed_1}}"></template>-->
+                  </view>
+                  <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <!--最新信息流-->
+                  <block wx:for="{{newDataArr}}" wx:key="*this">
+                  <template is="feed-item" data="{{i_feed: item}}"></template>
+                  </block>
+                      <!--<template is="feed-item" data="{{i_feed: i_feed_2}}"></template>-->
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view>
+  
 </view>
+

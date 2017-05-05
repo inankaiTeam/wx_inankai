@@ -47,6 +47,9 @@
 }
 .i-part1 .i-userinfo-right .i-username{
     margin: 10rpx 0 45rpx;
+    font-size:42rpx;
+}
+.i-part1 .i-userinfo-right .i-username text{
     color: #fff;
 }
 .i-part1 .i-userinfo-right .i-intro{

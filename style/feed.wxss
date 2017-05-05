@@ -46,11 +46,12 @@
     line-height:1.4em;
     height:4.2em;
     overflow:hidden;
+    text-align:justify;
 }
 .i-feed-content .i-text-show{
     display: block;
     line-height:1.4em;
-
+    text-align:justify;
 }
 .show-or-hide text{
     float:left;
@@ -152,6 +153,9 @@
 
 .i-sent-date{
     font-size: 26rpx;
-    color:#bbb;
+    
     margin:10rpx 0;
+}
+.i-sent-date text {
+    color:#bfbfbf;
 }
