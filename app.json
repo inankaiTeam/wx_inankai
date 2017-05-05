@@ -1,15 +1,13 @@
 {
   "pages":[
-    "pages/publish/publish",
-    "pages/index/index",
     "pages/user/user",
-   
+    "pages/index/index",
+    "pages/publish/publish",
     
     "pages/messages/messages",
     "pages/logs/logs",
     "pages/search/search",
     "pages/hot/hot",
-    
     "pages/people/people",
     "pages/edit/edit",
     "pages/collection/collection",

@@ -44,7 +44,53 @@ Page({
     })
   },
   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+    wx.request({
+      url: 'https://ask.nankai.edu.cn/setUserInfo',
+      data: {
+        openId:1,
+        nickName:"彭老板asdad",
+        gender:1,
+        city:"天津",
+        province:"天津",
+        country:"中国",
+        avatarUrl:"/images/logo.jpg",
+        newNickName:"彭朝阳zxcas",
+        grade:"大四",
+        hometown:"云南",
+        major:"计控"
+      },
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res.data);
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+    wx.request({
+      url: 'https://ask.nankai.edu.cn/getUserInfo',
+      data: {
+        openId:1
+      },
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res.data);
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+
   },
   onReady:function(){
     // 页面渲染完成
