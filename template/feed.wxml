@@ -12,8 +12,8 @@
       img_arr: ['/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg', '/images/icon_tabbar.jpg']
     }
 -->
-<template name="feed-item">
-    <view class="i-feed-item">
+<template name="feed-item" >
+    <view class="i-feed-item" >
         <view class="i-avatar">
             <image src="{{i_feed.avatar}}"></image>
         </view>
@@ -23,16 +23,19 @@
                 <image src="/images/option.png"></image>
             </view>
             <view class="i-sent-date">
-                <text class="">{{i_feed.sent_date}}</text>
+                <text class="">{{i_feed.time}}</text>
             </view>
             <view class="i-feed-content">
-                <text class="{{i_feed.isHide ? i_feed.textHide : i_feed.textShow}}">{{i_feed.feed_content}}</text>
-                <view wx:if="{{!!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickopen" data-cardid="{{i_feed.cardid}}"> 
-                    <text>全文</text>  
+                <text class="{{i_feed.isHide ? i_feed.textHide : i_feed.textShow}}">{{i_feed.content}}</text>
+                <view wx:if="{{i_feed.isAllHide}}">
+                    <view wx:if="{{!!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickopen" data-feed="{{i_feed}}"> 
+                        <text>全文</text>  
+                    </view>
+                    <view wx:if="{{!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickclose" data-feed="{{i_feed}}"> 
+                        <text>收起</text> 
+                    </view>
                 </view>
-                <view wx:if="{{!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickclose" data-cardid="{{i_feed.cardid}}"> 
-                    <text>收起</text> 
-                 </view>
+                
                 <view class="i-pics">
                 <!--weui grid组件-->
                     <view class="weui-grids">
@@ -48,29 +51,29 @@
 
     <view class="i-feed-bottom">
             <view class="i-hr"></view>
-            <view class="i-comment" bindtap="toComment" data-cardid="{{i_feed.cardid}}">
+            <view class="i-comment" bindtap="toComment" data-cardid="{{i_feed}}">
                 <image src="/images/comment.png" ></image>
                 <text>{{i_feed.comment}}</text>
             </view>
-            <view class="i-like" bindtap="onclickLike">
-                <view wx:if="{{!i_feed.isLike}}" data-isLike="{{i_feed.isLike}}"> 
+            <view class="i-like" bindtap="onclickLike" data-feed="{{i_feed}}">
+                <view wx:if="{{!i_feed.isLike}}"> 
                     <image src="/images/like.png" ></image>
                 </view>
-                <view wx:if="{{i_feed.isLike}}" data-isLike="{{!i_feed.isLike}}"> 
+                <view wx:if="{{i_feed.isLike}}"> 
                     <image src="/images/like_act.png" ></image>
                 </view>
-                <text>{{i_feed.like}}</text>
+                <text>{{i_feed.zanNum}}</text>
             </view>
-            <view class="i-dislike" bindtap="onclickDislike">
-                <view wx:if="{{!i_feed.isDislike}}" data-isDislike="{{i_feed.isDislike}}"> 
+            <view class="i-dislike" bindtap="onclickDislike" data-feed="{{i_feed}}">
+                <view wx:if="{{!i_feed.isDislike}}"> 
                     <image src="/images/dislike.png" ></image>
                 </view>
-                <view wx:if="{{i_feed.isDislike}}" data-isDislike="{{!i_feed.isDislike}}"> 
+                <view wx:if="{{i_feed.isDislike}}"> 
                     <image src="/images/dislike_act.png" ></image>
                 </view>
             </view>
             
-            <view class="i-collection" bindtap="onclickCollection">
+            <view class="i-collection" bindtap="onclickCollection" data-feed="{{i_feed}}">
                 <view wx:if="{{!i_feed.isCollection}}" data-isCollection="{{i_feed.isCollection}}" > 
                     <image src="/images/collection.png" ></image>
                 </view>

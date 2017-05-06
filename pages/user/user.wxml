@@ -4,7 +4,7 @@
         <image src="/images/edit.png"></image>
     </view>
     <view class="i-banner">
-        <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" mode="aspectFill" ></image>
+        <image src="https://inankai.nankai.edu.cn/image/appbg.jpg" mode="aspectFill" ></image>
     </view>
     <view class="i-part1 ">
         <view class="clearfix">
