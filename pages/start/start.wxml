@@ -1,0 +1,3 @@
+<!--pages/start/start.wxml-->
+<image bindtap="start" class="full-screen" src="https://inankai.nankai.edu.cn/image/screen.jpg"></image>
+

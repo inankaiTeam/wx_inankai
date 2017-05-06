@@ -1,0 +1,15 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+    <view class="info-group">
+        <image class="logo" src="/images/logo.jpg"></image>
+        <view class="name">inankai</view>
+        <view class="version">1.0.0 Beta版</view>
+        <view class="motto">在南开遇见你自己</view>
+    </view>
+    <view class="btn-group">
+        <button class="i-btn">使用说明</button>
+        <button class="i-btn">联系我们</button>
+        <button></button>
+        <button></button>
+    </view>
+</view>

@@ -26,6 +26,6 @@ App({
   },
   globalData:{
     userInfo:null,
-    text:null
+    userid:''
   }
 })

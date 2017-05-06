@@ -43,6 +43,11 @@ Page({
       url: '/pages/collection/collection'
     })
   },
+  toAbout(){
+    wx.navigateTo({
+      url: '/pages/about/about'
+    })
+  },
   onLoad:function(options){
     wx.request({
       url: 'https://ask.nankai.edu.cn/setUserInfo',

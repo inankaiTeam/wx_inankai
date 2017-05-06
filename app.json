@@ -1,8 +1,10 @@
 {
   "pages":[
+    "pages/start/start",
     "pages/user/user",
     "pages/index/index",
     "pages/publish/publish",
+    "pages/about/about",
     
     "pages/messages/messages",
     "pages/logs/logs",
