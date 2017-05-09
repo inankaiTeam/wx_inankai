@@ -37,6 +37,18 @@ Page({
         {
             title:"热门话题7",
             url:"hhh"
+        },
+        {
+            title:"热门话题7",
+            url:"hhh"
+        },
+        {
+            title:"热门话题7",
+            url:"hhh"
+        },
+        {
+            title:"热门话题7",
+            url:"hhh"
         }
 
     ]
