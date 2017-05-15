@@ -159,3 +159,17 @@
 .i-sent-date text {
     color:#bfbfbf;
 }
+.topic{
+    display: inline-block;
+    float:left;
+    padding-right: 8rpx;
+    color:#507daf;
+}
+.i-feed-content text.i-text-hide{
+    display: inline-block;
+    float:left;
+}
+.i-feed-content text.i-text-show{
+    display: inline-block;
+    float:left;
+}

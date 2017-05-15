@@ -9,24 +9,24 @@
     <view class="i-part1 ">
         <view class="clearfix">
             <view class="i-avatar">
-                <image src="/images/logo.jpg"></image>
+                <image src="{{userInfo.avatarUrl}}"></image>
             </view>
             <view class="i-userinfo-right">
                 <view class="i-username">
-                    <text>雨洁百科</text>
+                    <text>{{userInfo.newNickName}}</text>
                 </view>
                 <view class="i-intro">
-                    <text>4月1日欢迎关注高能少年团</text>
+                    <text>{{userInfo.signature}}</text>
                 </view>
             </view>
         </view>
         <view class="i-userinfo-bottom">
             <view class="i-allfeed" bindtap="toPeople">
-                    <text class="num">25</text>
+                    <text class="num">{{userInfo.feedsNum}}</text>
                     <text class="name">帖子</text>
             </view>
             <view class="i-collections" bindtap="toCollection">
-                <text class="num">25</text>
+                <text class="num">{{userInfo.collectionNum}}</text>
                 <text class="name">收藏</text>
             </view>
         </view>

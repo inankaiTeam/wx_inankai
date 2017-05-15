@@ -5,6 +5,10 @@ var i_feed = require('../../utils/feed.js');
 var util = require('../../utils/util.js');
 console.log(i_feed);
 
+let page = 0;
+let hotDataArr = [];
+let newDataArr = [];
+let currentPage = 0;
 for (let [index, item] of i_feed.i_feeds.entries()){
   var opt = {
       isHide:true,
@@ -32,6 +36,8 @@ Page({
   },
   //事件处理函数
   tabClick: function (e) {
+    console.log(e.currentTarget);
+    currentPage = e.currentTarget.id;
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,activeIndex: e.currentTarget.id
     });
@@ -71,7 +77,6 @@ Page({
     app.getUserInfo(function(userInfo){
       //更新数据
       console.log(userInfo);
-      
       that.setData({
         userInfo:userInfo
       })
@@ -88,13 +93,16 @@ Page({
         url: 'https://ask.nankai.edu.cn/getCard', //仅为示例，并非真实的接口地址
         data: {
           userid:1,
-          type:'hot'
+          type:'hot',
+          page: page
         },
         success: function(res) {
           let data = res.data.data;
           console.log(data);
           for(let i = 0;i<data.length;i++){
             let isAllHide = i_feed.isHide(data[i].content);
+            let topics = util.getTopics(data[i].content);
+            data[i].content = util.filterTopics(data[i].content);
             var opt = {
                 type:'hot',
                 avatar:'/images/logo.jpg',
@@ -106,13 +114,16 @@ Page({
                 isLike:false,
                 isCollection:false,
                 isDislike:false,
-                index: i
+                index: i,
+                topics:topics
               };
             data[i] = util.increase_attr(data[i],opt);
             // console.log(data[i]);
+
           }
+          hotDataArr = hotDataArr.concat(data);
           that.setData({
-            hotDataArr:data
+            hotDataArr:hotDataArr
           })
         }
       });
@@ -122,31 +133,36 @@ Page({
         url: 'https://ask.nankai.edu.cn/getCard', //仅为示例，并非真实的接口地址
         data: {
           userid:1,
-          type:'new'
+          type:'new',
+          page: page
         },
         success: function(res) {
           let data = res.data.data;
-          console.log(data);
-          for(let i = 0;i<data.length;i++){
+          for(let i = 0;i < data.length;i++){
             let isAllHide = i_feed.isHide(data[i].content);
+            let topics = util.getTopics(data[i].content);
+            data[i].content = util.filterTopics(data[i].content);
             var opt = {
-                type:'new',
-                avatar:'/images/logo.jpg',
+                type: 'new',
+                avatar: '/images/logo.jpg',
                 username: '陈静韬真的会修电脑喵',
-                isHide:true,
-                isAllHide:isAllHide,
-                textHide:"i-text-hide",
-                textShow:"i-text-show",
-                isLike:false,
-                isCollection:false,
-                isDislike:false,
-                index: i
+                isHide: true,
+                isAllHide: isAllHide,
+                textHide: "i-text-hide",
+                textShow: "i-text-show",
+                isLike: false,
+                isCollection: false,
+                isDislike: false,
+                index: i,
+                topics:topics
               };
             data[i] = util.increase_attr(data[i],opt);
             // console.log(data[i]);
           }
+          newDataArr = newDataArr.concat(data);
+          console.log(newDataArr)
           that.setData({
-            newDataArr:data
+            newDataArr:newDataArr
           })
         }
       });
@@ -160,5 +176,94 @@ Page({
           });
         }
       });
+  },
+  onReachBottom: function(){
+    page++;
+    var that = this;
+    if(currentPage == 0) {
+      console.log("最热");
+      // 请求渲染最热列表
+        wx.request({
+          url: 'https://ask.nankai.edu.cn/getCard', //仅为示例，并非真实的接口地址
+          data: {
+            userid:1,
+            type:'hot',
+            page: page
+          },
+          success: function(res) {
+            let data = res.data.data;
+            console.log(data);
+            for(let i = 0;i<data.length;i++){
+              let isAllHide = i_feed.isHide(data[i].content);
+              let topics = util.getTopics(data[i].content);
+              data[i].content = util.filterTopics(data[i].content);
+              var opt = {
+                  type:'hot',
+                  avatar:'/images/logo.jpg',
+                  username: '陈静韬真的会修电脑喵',
+                  isHide:true,
+                  isAllHide:isAllHide,
+                  textHide:"i-text-hide",
+                  textShow:"i-text-show",
+                  isLike:false,
+                  isCollection:false,
+                  isDislike:false,
+                  index: i,
+                  topics:topics
+                };
+              data[i] = util.increase_attr(data[i],opt);
+              // console.log(data[i]);
+
+            }
+            hotDataArr = hotDataArr.concat(data);
+            that.setData({
+              hotDataArr:hotDataArr
+            })
+          }
+        });
+    } else {
+      console.log("最新");
+      // 请求渲染最新列表
+        wx.request({
+          url: 'https://ask.nankai.edu.cn/getCard', //仅为示例，并非真实的接口地址
+          data: {
+            userid:1,
+            type:'new',
+            page: page
+          },
+          success: function(res) {
+            let data = res.data.data;
+            for(let i = 0;i < data.length;i++){
+              let isAllHide = i_feed.isHide(data[i].content);
+              let topics = util.getTopics(data[i].content);
+              data[i].content = util.filterTopics(data[i].content);
+              var opt = {
+                  type: 'new',
+                  avatar: '/images/logo.jpg',
+                  username: '陈静韬真的会修电脑喵',
+                  isHide: true,
+                  isAllHide: isAllHide,
+                  textHide: "i-text-hide",
+                  textShow: "i-text-show",
+                  isLike: false,
+                  isCollection: false,
+                  isDislike: false,
+                  index: i,
+                  topics:topics
+                };
+              data[i] = util.increase_attr(data[i],opt);
+              // console.log(data[i]);
+            }
+            newDataArr = newDataArr.concat(data);
+            console.log(newDataArr)
+            that.setData({
+              newDataArr:newDataArr
+            })
+          }
+        });
+    }
+    
+
+    
   }
 })

@@ -26,7 +26,14 @@ Page({
           url:"hhh",
           img:"/images/about.png"
       }
-    ]
+    ],
+    userInfo:{
+      newNickName:"",
+      avatarUrl:"",
+      signature:"a",
+      feedsNum:0,
+      collectionNum:0
+    }
   },
   toPeople: function(){
     wx.navigateTo({
@@ -44,10 +51,11 @@ Page({
     })
   },
   onLoad:function(options){
+    let that = this;
     wx.request({
       url: 'https://ask.nankai.edu.cn/setUserInfo',
       data: {
-        openId:1,
+        openId:'oBoUa0WRoLj-3T_9VC2esoOVCCdk',
         nickName:"彭老板asdad",
         gender:1,
         city:"天津",
@@ -59,7 +67,7 @@ Page({
         hometown:"云南",
         major:"计控"
       },
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
         // success
@@ -75,13 +83,19 @@ Page({
     wx.request({
       url: 'https://ask.nankai.edu.cn/getUserInfo',
       data: {
-        openId:1
+        openid:'oBoUa0WRoLj-3T_9VC2esoOVCCdk'
       },
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
         // success
         console.log(res.data);
+        let data = res.data.data;
+        let obj = Object.assign(that.data.userInfo,data);
+        that.setData({
+          userInfo: obj
+        })
+
       },
       fail: function(res) {
         // fail

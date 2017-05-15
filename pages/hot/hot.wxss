@@ -11,7 +11,7 @@
     /*height: 100%;*/
     background-color: #f2f2f2;
     overflow: hidden;
-    padding-bottom: 10rpx;
+    /*padding-bottom: 10rpx;*/
 }
 .i-search{
     width: 90%;
@@ -48,7 +48,7 @@ swiper image{
 }
 
 .i-hot-topic {
-    margin: 20rpx 0;
+    margin: 20rpx 0 0;
     background-color: #fff;
     overflow: hidden;
     border-bottom: 1px #f2f2f2 solid;
