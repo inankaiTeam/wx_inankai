@@ -6,11 +6,12 @@ var zan = require('../../utils/zan.js');
 
 Page({
     data: {
-        tabs: ["@我的", "评论", "赞"],
+        // tabs: ["@我的", "评论", "赞"],
+        tabs: ["评论", "赞"],
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
-        atme: atme,
+        // atme: atme,
         comment: comment,
         zan: zan,
         userInfo: {}
@@ -41,5 +42,28 @@ Page({
             });
             }
         });
+    },
+    onShow(){
+        let that=this
+        wx.request({
+            method:'GET',
+            url: 'https://ask.nankai.edu.cn/getUnread', //仅为示例，并非真实的接口地址
+            data: {
+                userid:1
+            },
+            success: function(res) {
+                console.log(res.data)
+                let arr=res.data.data
+                zan=arr.filter((item)=>{
+                    return item.type==3  //点赞
+                })
+                that.setData({
+                    zan:zan
+                })
+            },
+            fail(e){
+                console.warn(e)
+            }
+        })
     }
 })

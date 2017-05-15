@@ -14,20 +14,21 @@
             </view>
             <view class="weui-tab__panel">
                 <!-- @me -->
-                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <!--<view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                 <block wx:for="{{atme}}">
                     <template is="atme-item" data="{{item}}"></template>
                 </block>
-                </view>
+                </view>-->
                 <!-- comment -->
                 
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">                 <block wx:for="{{comment}}">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">                 <block wx:for="{{comment}}">
                         <template is="comment-item" data="{{item}}"></template>
+                        
                     </block>
                 
                 </view>
                 <!-- zan -->
-                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                 <block wx:for="{{zan}}">
                         <template is="zan-item" data="{{item}}"></template>
                 </block>

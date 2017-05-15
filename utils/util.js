@@ -23,6 +23,8 @@ function getTopics(content){
   topics=topics.map((item)=>{
     return item.substr(1,item.length-2) //删除前后的#
   })
+  //数组去重
+  topics=Array.from(new Set(topics))
   return topics
 }
 function increase_attr(obj,opt) {
