@@ -103,6 +103,7 @@ Feed.prototype.onclickclose = function(self, event){
     })
 }
 Feed.prototype.onclickLike = function(self, event){
+  console.log(event.currentTarget.dataset)
   let checkStatus = event.currentTarget.dataset.feed.isLike;
   let attrIsLike = this.getAttr(event,"isLike");
   // let attrLikeUrl = this.getAttr(event,"likeUrl");
