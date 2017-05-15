@@ -4,8 +4,8 @@
 <view class="i-banner">
         <image src="https://inankai.nankai.edu.cn/image/appbg.jpg" mode="aspectFill"></image>
         <view class="i-topic-info">
-            <text>#早安南开#</text>
-            <text>此话题下一共有631个帖子</text>
+            <text>#{{title}}#</text>
+            <text>此话题下一共有{{feeds_num}}个帖子</text>
         </view>
     </view>
   <view class="page">

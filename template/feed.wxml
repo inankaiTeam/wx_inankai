@@ -19,14 +19,20 @@
         </view>
         <view class="i-feed-main">
             <view class="i-feed-top">
-                <text class="i-username">{{i_feed.username}}</text>
+                <navigator url="/pages/people/people?username={{i_feed.username}}" class="i-username">{{i_feed.username}}</navigator>
                 <image src="/images/option.png"></image>
             </view>
             <view class="i-sent-date">
                 <text class="">{{i_feed.time}}</text>
             </view>
-            <view class="i-feed-content">
-                <text class="{{i_feed.isHide ? i_feed.textHide : i_feed.textShow}}">{{i_feed.content}}</text>
+            <view class="i-feed-content clearfix">
+                
+                <view class="{{i_feed.isHide ? i_feed.textHide : i_feed.textShow}}">
+                    <block wx:for="{{i_feed.topics}}" wx:key="*this">
+                        <navigator class="topic" url="/pages/topic/topic?url={{item}}">#{{item}}#</navigator>
+                  </block>
+                    {{i_feed.content}}
+                </view>
                 <view wx:if="{{i_feed.isAllHide}}">
                     <view wx:if="{{!!i_feed.isHide}}" class="show-or-hide clearfix" bindtap="onclickopen" data-feed="{{i_feed}}"> 
                         <text>全文</text>  
@@ -51,7 +57,7 @@
 
     <view class="i-feed-bottom">
             <view class="i-hr"></view>
-            <view class="i-comment" bindtap="toComment" data-cardid="{{i_feed}}">
+            <view class="i-comment" bindtap="toComment" data-cardid="{{i_feed.cardid}}">
                 <image src="/images/comment.png" ></image>
                 <text>{{i_feed.comment}}</text>
             </view>

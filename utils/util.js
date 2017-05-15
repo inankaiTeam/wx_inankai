@@ -27,6 +27,10 @@ function getTopics(content){
   topics=Array.from(new Set(topics))
   return topics
 }
+function filterTopics(content){
+  content = content.replace(/#([^#;]*?)#/g,'');
+  return content;
+}
 function increase_attr(obj,opt) {
   Object.assign(obj, opt);
   return obj;
@@ -34,5 +38,6 @@ function increase_attr(obj,opt) {
 module.exports = {
   formatTime: formatTime,
   increase_attr: increase_attr,
-  getTopics: getTopics
+  getTopics: getTopics,
+  filterTopics:filterTopics
 }
