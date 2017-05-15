@@ -2,12 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/publish/publish",
-    "pages/search/search",
+    "pages/messages/messages",
     "pages/hot/hot",
     "pages/user/user",
-    
-    "pages/messages/messages",
-    "pages/logs/logs",
+    "pages/search/search",
     "pages/people/people",
     "pages/edit/edit",
     "pages/collection/collection",

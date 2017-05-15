@@ -24,13 +24,12 @@ var app = getApp();
 Page({
   data: {
     motto: 'Hello World',
+    title:'',
+    feeds_num:0,
     tabs: ["热门帖子", "最新帖子"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    grids: [0, 1, 2, 3, 4, 5, 6, 7],
-    i_feed_1:i_feed.i_feed_1,
-    i_feed_2:i_feed.i_feed_2,
     hotDataArr:[],
     newDataArr:[],
     userInfo:{}
@@ -45,16 +44,23 @@ Page({
     console.log(e);
       var that = this;
       // console.log(that);
-      i_feed.onclickopen(that);
+      i_feed.onclickopen(that,e);
   },
-  onclickclose: function() {
+  onclickclose: function(e) {
       var that = this;
-      i_feed.onclickclose(that);
+      i_feed.onclickclose(that,e);
   },
   onclickLike: function(e) {
-      var checkStatus = e.currentTarget.dataset.isLike;
       var that = this;
-      i_feed.onclickLike(that,checkStatus);
+      i_feed.onclickLike(that, e);
+  },
+  onclickDislike: function(e) {
+      var that = this;
+      i_feed.onclickDislike(that, e);
+  },
+  onclickCollection:function(e) {
+      var that = this;
+      i_feed.onclickCollection(that, e);
   },
   toComment: function(e) {
       var cardid = e.currentTarget.dataset.cardid;
@@ -63,8 +69,11 @@ Page({
       var paramName = 'cardid';
       i_feed.toPage(pageUrl, paramName, cardid);
   },
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this;
+    that.setData({
+      title:options.url
+    })
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
@@ -74,28 +83,78 @@ Page({
         userInfo:userInfo
       })
     });
-
-    // 模拟ajax请求数据
-    this.setData({
-      hotDataArr:i_feed.i_feeds,
-      newDataArr:i_feed.i_feeds
-    });
-    console.log(this.data.hotDataArr);
-    // ajax请求渲染所需数据
+    // 请求渲染最热列表
       wx.request({
-        url: 'https://ask.nankai.edu.cn/getBanner', //仅为示例，并非真实的接口地址
+        url: 'https://ask.nankai.edu.cn/getCard', //仅为示例，并非真实的接口地址
         data: {
+          userid:1,
+          topic:options.url,
+          type:'hot'
         },
-        // header: {
-        //     'content-type': 'application/json'
-        // },
         success: function(res) {
-          console.log(res.data)
-          console.log(res.data)
+          let data = res.data.data;
+          console.log('res.data');
+          console.log(options.url);
+          for(let i = 0;i<data.length;i++){
+            let isAllHide = i_feed.isHide(data[i].content);
+            var opt = {
+                type:'hot',
+                avatar:'/images/logo.jpg',
+                username: '陈静韬真的会修电脑喵',
+                isHide:true,
+                isAllHide:isAllHide,
+                textHide:"i-text-hide",
+                textShow:"i-text-show",
+                isLike:false,
+                isCollection:false,
+                isDislike:false,
+                index: i
+              };
+            data[i] = util.increase_attr(data[i],opt);
+            // console.log(data[i]);
+          }
+          that.setData({
+            hotDataArr:data
+          })
         }
       });
 
+    // 请求渲染最新列表
+      wx.request({
+        url: 'https://ask.nankai.edu.cn/getCard', //仅为示例，并非真实的接口地址
+        data: {
+          userid:1,
+          topic:options.url,
+          type:'new'
+        },
+        success: function(res) {
+          let data = res.data.data;
+          console.log(data);
+          for(let i = 0;i<data.length;i++){
+            let isAllHide = i_feed.isHide(data[i].content);
+            var opt = {
+                type:'new',
+                avatar:'/images/logo.jpg',
+                username: '陈静韬真的会修电脑喵',
+                isHide:true,
+                isAllHide:isAllHide,
+                textHide:"i-text-hide",
+                textShow:"i-text-show",
+                isLike:false,
+                isCollection:false,
+                isDislike:false,
+                index: i
+              };
+            data[i] = util.increase_attr(data[i],opt);
+            // console.log(data[i]);
+          }
+          that.setData({
+            newDataArr:data
+          })
+        }
+      });
 
+    console.log(this.data.hotDataArr);
     // 顶部tab滑块动画
       wx.getSystemInfo({
         success: function(res) {
