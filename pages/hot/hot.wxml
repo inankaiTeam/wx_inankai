@@ -19,7 +19,12 @@
             <text>热门话题</text>
         </view> 
         <block wx:for="{{hot_topic}}">
-            <li bindtap="toTopic" data-url="{{item.url}}">{{item.title}}</li>
+            <li bindtap="toTopic" data-url="{{item.url}}">
+                <view class="i-topic-num">
+                    {{index<9?'0'+(index+1):(index+1)}}
+                </view>
+                <view class="i-topic-name">{{item.title}}</view>
+            </li>
         </block>
     </view>
 </view>

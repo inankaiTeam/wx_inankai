@@ -14,13 +14,16 @@
     /*padding-bottom: 10rpx;*/
 }
 .i-search{
-    width: 90%;
+    /*width: 90%;*/
+    box-sizing: border-box;
     height: 70rpx;
-    margin: 20rpx auto;
+    display: flex;
+    align-items: center;
+    /*margin: 20rpx auto;*/
     /*padding-top: 20rpx; */
-    padding-left:20rpx; 
+    /*padding-left:20rpx; */
     overflow: hidden;
-    /*padding: 20rpx 0;*/
+    padding: 0 20rpx;
     background-color: #fff;
     border-radius: 16rpx;
     font-size: 30rpx;
@@ -30,7 +33,6 @@
     height:32rpx;
     margin-right:5rpx;
     float:left;
-    margin-top:19rpx;
 }
 .i-search text{
     width: 94%;
@@ -58,6 +60,7 @@ swiper image{
     padding: 20rpx 0;
     border-top: 1px #f2f2f2 solid;
     border-bottom: 1px #f2f2f2 solid;
+    font-size: 28rpx;
 }
 .i-hot-topic .h2 image{
     margin:0rpx 20rpx 0;
@@ -67,7 +70,7 @@ swiper image{
 }
 .i-hot-topic li{
     display: block;
-    font-size: 28rpx;
+    font-size: 24rpx;
     border-bottom: 1px #f2f2f2 solid;
     padding: 20rpx 0 20rpx 20rpx;
     
@@ -75,4 +78,11 @@ swiper image{
 .i-hot-topic .i-li-bottom{
     border-bottom: 0px ;
 }
-
+.i-topic-num{
+    display: inline-block;
+}
+.i-topic-name{
+    color: #507daf;
+    display: inline-block;
+    margin: 0 20rpx;
+}

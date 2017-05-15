@@ -1,6 +1,6 @@
 <!--pages/search/search.wxml-->
 <view class="i-container">
-    <view class="clearfix">
+    <view class="clearfix i-search-wrapper">
         <view class="i-search">
             <image src="/images/search.png"></image>
             <input placeholder="搜索" bindtap="toSearchPage" focus="true" />

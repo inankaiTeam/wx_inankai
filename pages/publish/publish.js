@@ -83,7 +83,6 @@ Page({
         that.setData({
           imageList: res.tempFilePaths
         })
-        
       }
     })
   },
