@@ -1,0 +1,53 @@
+/* pages/about/about.wxss */
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:#999;
+}
+.info-group{
+    /*background: #eee;*/
+    padding: 150rpx 0 50rpx 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    
+}
+.logo{
+    width: 180rpx;
+    height: 180rpx;
+}
+.name{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.version{
+
+}
+.motto{
+    padding: 20rpx 0;
+    font-size: 16px;
+}
+.btn-group{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    /*background: #777;*/
+}
+.i-btn{
+    width:250rpx;
+    margin: 10rpx;
+    line-height: 1.8em;
+    background: transparent;
+    border: solid 1px #999;
+    font-size: 14px;
+    color: #999;
+}
+.i-btn.button-hover{
+    background: #999;
+    color:#fff;
+}

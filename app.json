@@ -1,9 +1,13 @@
 {
   "pages":[
     "pages/singlecomment/singlecomment",
-    "pages/messages/messages",
+
+    "pages/start/start",
+    "pages/user/user",
     "pages/index/index",
     "pages/publish/publish",
+    "pages/about/about",
+    
     "pages/messages/messages",
     "pages/hot/hot",
     "pages/user/user",

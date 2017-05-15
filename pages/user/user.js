@@ -50,6 +50,11 @@ Page({
       url: '/pages/collection/collection'
     })
   },
+  toAbout(){
+    wx.navigateTo({
+      url: '/pages/about/about'
+    })
+  },
   onLoad:function(options){
     let that = this;
     wx.request({
